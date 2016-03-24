@@ -1,0 +1,50 @@
+User Story 1. As a game player, I want to use a GUI
+              so that the Adventure game is easier to play.
+
+    @Acceptance Criteria:
+        The game uses a GUI for all commands previously available as text commands.
+        
+
+
+Split Story B. (8 SP) As a CS 314 student, I want to implement Dr. Bieman's
+               model-view separation design and get the game working with this GUI.
+    @Acceptance Criteria:
+          - The game uses a BreezeSwing GUI for all commands previously
+             available as text commands.
+
+    @Tasks (estimation/actual time):
+          *(1hr) Learn BreezySwing
+          *(1hr) Learn JUnit
+          *(2hr) Study class diagram and code and figure out what code needs
+            to be added to connect facade methods to AdventureGame code.
+            Add code accordingly.
+          *(1hr) Create JUnit tests for allnew methods added to any class and for all
+            methods in new classes.
+          *(1hr) Move all text string output and make sure it is included in the GUI correctly.
+
+
+
+
+
+
+
+
+---------------------------------------------------------------
+@ Definition of Done:
+For all user stories:
+- GitHub main branch code runs with no warnings and a user can
+   access a GUI to execute all commands that were possible from the command line version
+- All code changes are reviewed before being merged onto the main branch (see A1,
+   tutorial 5 for instructions on the GitHub Pull Request Code Review System you must
+   use for reviews)
+- All code changes are merged into the main branch
+- All code is unit tested and all tests pass
+
+For CS314 development:
+- All work is done on individual branches with frequent commits and pushes to
+   GitHub before being merged onto the main branch (do frequent commits and
+   pushes to prevent losing work, and do pushes so others can use your work)
+- Commit messages include user story and task
+- All user stories and point estimates are in GitHub
+- All tasks and time estimates and actual time taken are in GitHub
+- The overview.txt file for A2 has all required items in it
