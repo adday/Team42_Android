@@ -1,57 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/testView0"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView android:id="@+id/roomView"
+    <TextView
+        android:id="@+id/roomView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
         android:text="@string/myView"/>
-    <TextView android:id="@+id/myItems"
+    <TextView
+        android:id="@+id/myItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
         android:text="@string/myThings">
         <requestFocus/></TextView>
-    <Button android:id="@+id/goUp"
+    <Button
+        android:id="@+id/goUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/up"/><Button
+        android:text="@string/up"
+        android:onClick="myClickHandler"/>
+    <Button
         android:id="@+id/goDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/down"/>
-    <Button android:id="@+id/button2"
+        android:text="@string/down"
+        android:onClick="myClickHandler"/>
+    <Button
+        android:id="@+id/goNorth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/north"/>
-    <Button android:id="@+id/button3"
+        android:text="@string/north"
+        android:onClick="myClickHandler"/>
+    <Button
+        android:id="@+id/goSouth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/south"/>
-    <Button android:id="@+id/button4"
+        android:text="@string/south"
+        android:onClick="myClickHandler"/>
+    <Button
+        android:id="@+id/goEast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/east"/>
-    <Button android:id="@+id/button5"
+        android:text="@string/east"
+        android:onClick="myClickHandler"/>
+    <Button
+        android:id="@+id/goWest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/west"/>
-    <Button android:id="@+id/button6"
+        android:text="@string/west"
+        android:onClick="myClickHandler"/>
+    <Button
+        android:id="@+id/grab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/grab"/>
-    <Button android:id="@+id/button7"
+        android:text="@string/grab"
+        android:onClick="myClickHandler"/>
+    <Button
+        android:id="@+id/drop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/drop"/></LinearLayout>
+        android:text="@string/drop"
+        android:onClick="myClickHandler"/>
+</LinearLayout>
