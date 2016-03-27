@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">AdventureGame</string>
+    <string name="app_name">Adventure Game</string>
+    <string name="hello">Hello World, AdventureActivity!</string>
+    <string name="viewLabel">Your View</string>
+    <string name="itemsHeldLabel">My Items</string>
+    <string name="west">Go West</string>
+    <string name="north">Go North</string>
+    <string name="south">Go South</string>
+    <string name="east">Go East</string>
+    <string name="up">Go Up</string>
+    <string name="down">Go Down</string>
+    <string name="grab">Grab</string>
+    <string name="drop">Drop</string>
+    <string name="myView">My View</string>
+    <string name="myThings">My Things</string>
+    <string name="action_settings">Action</string>
 </resources>
