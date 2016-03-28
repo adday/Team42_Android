@@ -41,31 +41,39 @@ public class AdventureActivity extends Activity {
  	public void myClickHandler(View view) {
         TextView myView = (TextView) findViewById(R.id.roomView);
         TextView myItems = (TextView) findViewById(R.id.myItems);
+        TextView myMove = (TextView) findViewById(R.id.myMove);
+        String move;
 
         switch (view.getId()) {
             case R.id.goUp:
-                model.goUp();
+                move = model.goUp();
                 myView.setText(model.getView());
+                myMove.setText(move);
                 break;
             case R.id.goDown:
-                model.goDown();
+                move = model.goDown();
                 myView.setText(model.getView());
+                myMove.setText(move);
                 break;
             case R.id.goNorth:
-                model.goNorth();
+                move = model.goNorth();
                 myView.setText(model.getView());
+                myMove.setText(move);
                 break;
             case R.id.goSouth:
-                model.goSouth();
+                move = model.goSouth();
                 myView.setText(model.getView());
+                myMove.setText(move);
                 break;
             case R.id.goEast:
-                model.goEast();
+                move = model.goEast();
                 myView.setText(model.getView());
+                myMove.setText(move);
                 break;
             case R.id.goWest:
-                model.goWest();
+                move = model.goWest();
                 myView.setText(model.getView());
+                myMove.setText(move);
                 break;
             case R.id.drop:
 
