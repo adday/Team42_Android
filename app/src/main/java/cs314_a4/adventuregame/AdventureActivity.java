@@ -2,6 +2,7 @@ package cs314_a4.adventuregame;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,7 +32,7 @@ public class AdventureActivity extends Activity {
         //initialize connection to model
         model = new AdventureGameModelFacade();
 
-        displayCurrentInfo(model.getView());
+        displayCurrentInfo("");
     }
 
  // This method is called at button click because we assigned the name to the
