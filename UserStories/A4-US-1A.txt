@@ -1,46 +1,46 @@
-User Story 1. As a game player, I want to use a GUI
-              so that the Adventure game is easier to play.
+User Story 1 (X PTS): As a game player, I want an improved GUI for the Adventure game,
+                so that I can play the game on an Android device.
 
     @Acceptance Criteria:
-        The game uses a GUI for all commands previously available as text commands.
+        -The game works on an Android device emulation, or an actual Android device.
+          All commands available in previous versions of the game are accessible and work properly
+          on the Android device.
 
 
+Split Story A (X PTS): As a CS 314 student, I want to create a new GUI as a new game view,
+                  so that the game will run on an Android device. (See the Notes in the Description section
+                  below for additional information you need to deliver the acceptance criteria listed below.)
+    @Acceptance Criteria (AC):
+        - The new interface works on the Android platform.
+        - The game retains its Model-View separation design: All 'view' software only accesses functional
+            parts of the game through the AdventureGameModelFacade class.
+        - New tests for your Android Java code are written and pass. Any defects they find are fixed.
+        - All previous JUnit tests are run and pass.
+        - Meet 'Definition of Done' (DoD), below.
 
-
-Split Story A. (5 SP) As a CS 314 student, I want to refactor the Adventure game
-               code so that it is easier to change the user interface.
-      @Acceptance Criteria:
-           - The main branch game source code structure matches Dr. Bieman's class design.
-
-      @Tasks (estimation/actual time):
-          *(1hr) Infrastructure: git branches, adding new code, setting up
-            build path in Eclipse, etc. Result all code merged into master and
-            ready for everyone to work on.
-          *(1hr) Study class diagram and code and figure out what code needs
-            to be moved to match class diagram. Change code accordingly.
-
-
-
-
+    @Tasks (estimation/actual time):
+        *(/)
+        *(/)
+        *(/)
+        *(/)
+        *(/)
 
 
 
 ---------------------------------------------------------------
 @ Definition of Done:
 For all user stories:
-- GitHub main branch code runs with no warnings and a user can
-   access a GUI to execute all commands that were possible from the command line version
-- All code changes are reviewed before being merged onto the main branch (see A1,
-   tutorial 5 for instructions on the GitHub Pull Request Code Review System you must
-   use for reviews)
-- All code changes are merged into the main branch
-- All code is unit tested and all tests pass
+
+    - GitHub main branch code runs with no warnings and a user can execute all commands at least using the GUI.
+    - All code changes are reviewed before being merged onto the main branch (see A1, tutorial 5
+        for instructions on the GitHub Pull Request Code Review System you must use for reviews)
+    - All code changes are merged into the main branch
 
 For CS314 development:
-- All work is done on individual branches with frequent commits and pushes to
-   GitHub before being merged onto the main branch (do frequent commits and
-   pushes to prevent losing work, and do pushes so others can use your work)
-- Commit messages include user story and task
-- All user stories and point estimates are in GitHub
-- All tasks and time estimates and actual time taken are in GitHub
-- The overview.txt file for A2 has all required items in it
+
+    - All work is done on individual branches with frequent commits and pushes to GitHub
+        before being merged onto the main branch.
+    - Commit messages include user story and task
+    - All user stories and point estimates are in GitHub
+    - All tasks and time estimates and actual time taken are in GitHub
+    - The overview.txt file for A4 has all required items in it
