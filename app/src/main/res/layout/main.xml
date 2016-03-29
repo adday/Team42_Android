@@ -21,10 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
         android:text="@string/myThings"
-        android:layout_marginTop="63dp"
-        android:layout_below="@+id/roomView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_below="@+id/goSouth"
+        android:layout_alignRight="@+id/goEast"
+        android:layout_alignEnd="@+id/goEast">
         <requestFocus/></TextView>
 
     <Button
@@ -34,9 +33,9 @@
         android:layout_weight="0.01"
         android:text="@string/up"
         android:onClick="myClickHandler"
-        android:layout_above="@+id/goDown"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/goDown"
+        android:layout_alignStart="@+id/goDown" />
 
     <Button
         android:id="@+id/goDown"
@@ -45,9 +44,9 @@
         android:layout_weight="0.01"
         android:text="@string/down"
         android:onClick="myClickHandler"
-        android:layout_above="@+id/goNorth"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/goUp"
+        android:layout_alignLeft="@+id/goEast"
+        android:layout_alignStart="@+id/goEast" />
     <Button
         android:id="@+id/goNorth"
         android:layout_width="wrap_content"
@@ -55,9 +54,9 @@
         android:layout_weight="0.01"
         android:text="@string/north"
         android:onClick="myClickHandler"
-        android:layout_above="@+id/grab"
-        android:layout_toLeftOf="@+id/goDown"
-        android:layout_toStartOf="@+id/goDown" />
+        android:layout_above="@+id/goWest"
+        android:layout_toRightOf="@+id/goWest"
+        android:layout_toEndOf="@+id/goWest" />
     <Button
         android:id="@+id/goSouth"
         android:layout_width="wrap_content"
@@ -65,10 +64,10 @@
         android:layout_weight="0.01"
         android:text="@string/south"
         android:onClick="myClickHandler"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/goUp"
-        android:layout_toStartOf="@+id/goUp"
-        android:layout_marginBottom="113dp" />
+        android:layout_alignBaseline="@+id/playerItemSelector"
+        android:layout_alignBottom="@+id/playerItemSelector"
+        android:layout_toLeftOf="@+id/goEast"
+        android:layout_toStartOf="@+id/goEast" />
     <Button
         android:id="@+id/goEast"
         android:layout_width="wrap_content"
@@ -86,9 +85,9 @@
         android:layout_weight="0.01"
         android:text="@string/west"
         android:onClick="myClickHandler"
-        android:layout_below="@+id/goNorth"
-        android:layout_toLeftOf="@+id/goNorth"
-        android:layout_toStartOf="@+id/goNorth" />
+        android:layout_above="@+id/goSouth"
+        android:layout_toLeftOf="@+id/goSouth"
+        android:layout_toStartOf="@+id/goSouth" />
 
     <Button
         android:id="@+id/grab"
@@ -97,7 +96,7 @@
         android:layout_weight="0.01"
         android:text="@string/grab"
         android:onClick="myClickHandler"
-        android:layout_above="@+id/goSouth"
+        android:layout_above="@+id/goWest"
         android:layout_toLeftOf="@+id/goWest"
         android:layout_toStartOf="@+id/goWest" />
 
@@ -108,19 +107,33 @@
         android:layout_weight="0.01"
         android:text="@string/drop"
         android:onClick="myClickHandler"
-        android:layout_alignTop="@+id/grab"
-        android:layout_toLeftOf="@+id/grab"
-        android:layout_toStartOf="@+id/grab" />
+        android:layout_above="@+id/playerItemSelector"
+        android:layout_alignLeft="@+id/grab"
+        android:layout_alignStart="@+id/grab" />
 
     <ToggleButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New ToggleButton"
+        android:text="PlayerItemSelector"
         android:id="@+id/playerItemSelector"
         android:textOn="@string/playerToggleOn"
         android:textOff="@string/playerToggleOff"
-        android:layout_alignTop="@+id/goSouth"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/drop"
+        android:layout_alignStart="@+id/drop"
+        android:layout_marginBottom="45dp"
+        android:checked="false" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/roomItemSelector"
+        android:layout_above="@+id/goNorth"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/goSouth"
+        android:layout_alignEnd="@+id/goSouth"
+        android:layout_alignTop="@+id/goUp"
+        android:headerDividersEnabled="false" />
 
 </RelativeLayout>
