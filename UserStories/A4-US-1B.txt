@@ -1,4 +1,4 @@
-User Story 1 (X PTS): As a game player, I want an improved GUI for the Adventure game,
+User Story 1 (10 PTS): As a game player, I want an improved GUI for the Adventure game,
                 so that I can play the game on an Android device.
 
     @Acceptance Criteria:
@@ -7,7 +7,7 @@ User Story 1 (X PTS): As a game player, I want an improved GUI for the Adventure
           on the Android device.
 
 
-Split Story B (X PTS): As a CS 314 student, I want to evaluate my Android GUI with respect to usability,
+Split Story B (2 PTS): As a CS 314 student, I want to evaluate my Android GUI with respect to usability,
                         so that I can provide evidence and rationale for subsequent GUI design changes.
     @Acceptance Criteria (AC):
         - Two usability goals are evaluated:
@@ -22,12 +22,10 @@ Split Story B (X PTS): As a CS 314 student, I want to evaluate my Android GUI wi
         - Meet 'Definition of Done' (DoD), below.
 
     @Tasks (estimation/actual time):
-            *(/)
-            *(/)
-            *(/)
-            *(/)
-            *(/)
-
+            *(2hrs/) Think up 4 questions that would produce fruitful answers
+            *(2hrs/) Answer Questions / Use application
+            *(1hr/) Type up results in 'overview.txt'
+            *(1hr/) Ensure that DoD and rubric are both met
 
 
 ---------------------------------------------------------------

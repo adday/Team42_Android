@@ -1,4 +1,4 @@
-User Story 1 (X PTS): As a game player, I want an improved GUI for the Adventure game,
+User Story 1 (10 PTS): As a game player, I want an improved GUI for the Adventure game,
                 so that I can play the game on an Android device.
 
     @Acceptance Criteria:
@@ -7,7 +7,7 @@ User Story 1 (X PTS): As a game player, I want an improved GUI for the Adventure
           on the Android device.
 
 
-Split Story A (X PTS): As a CS 314 student, I want to create a new GUI as a new game view,
+Split Story A (8 PTS): As a CS 314 student, I want to create a new GUI as a new game view,
                   so that the game will run on an Android device. (See the Notes in the Description section
                   below for additional information you need to deliver the acceptance criteria listed below.)
     @Acceptance Criteria (AC):
@@ -19,11 +19,14 @@ Split Story A (X PTS): As a CS 314 student, I want to create a new GUI as a new 
         - Meet 'Definition of Done' (DoD), below.
 
     @Tasks (estimation/actual time):
-        *(/)
-        *(/)
-        *(/)
-        *(/)
-        *(/)
+        *(1hr/.5hr) Download and install Android Studio
+        *(4hrs/4hrs) Learn how to use Android Studio
+        *(2hrs/2.5hrs) Build project and get Github to work with Android Studio
+        *(3hrs/) Add button functionality
+        *(2hrs/) Test application
+        *(.5hr/) Document Work
+        *(1hr/) Ensure that DoD and rubric are both met
+
 
 
 
