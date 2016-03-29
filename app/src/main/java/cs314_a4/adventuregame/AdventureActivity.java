@@ -5,13 +5,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import cs314_A3.AdventureGameModelFacade;
 import cs314_A3.Item;
@@ -31,14 +27,13 @@ public class AdventureActivity extends Activity {
         //initialize connection to model
         model = new AdventureGameModelFacade();
 
-        displayCurrentInfo(model.getView());
+        displayCurrentInfo("");
     }
 
  // This method is called at button click because we assigned the name to the
  	// "On Click property" of the button
  	public void myClickHandler(View view) {
         TextView myView = (TextView) findViewById(R.id.roomView);
-        TextView myItems = (TextView) findViewById(R.id.myItems);
         String actionResult = "";
 
         switch (view.getId()) {
@@ -66,6 +61,8 @@ public class AdventureActivity extends Activity {
             case R.id.grab:
                 actionResult = grab();
                 break;
+            case R.id.exit:
+                System.exit(0);
         }
         displayCurrentInfo(actionResult);
     }
@@ -76,10 +73,8 @@ public class AdventureActivity extends Activity {
         TextView myView = (TextView) findViewById(R.id.roomView);
         myView.setText(model.getView() + '\n' + result);
 
-        TextView myItems = (TextView) findViewById(R.id.myItems);
-        myItems.setText(model.showItems());
-
         updateRoomItems();
+        updateUserItems();
     }
 
     //updates room items comboBox to reflect what's currently in the room
@@ -96,6 +91,20 @@ public class AdventureActivity extends Activity {
         roomItemsList.setAdapter(itemsAdapter);
     }
 
+    //updates room items comboBox to reflect what's currently in the room
+    @SuppressWarnings("unchecked")
+    private void updateUserItems(){
+        ListView userItemsList = (ListView) findViewById(R.id.userItemSelector);
+
+        Item[] itemList = model.getPlayerItems();
+        ArrayList<String> playerItems = new ArrayList<String>();
+        for(int i = 0; i < model.getPlayerNumOfItemsCarried(); i++)
+                playerItems.add(itemList[i].getDesc());
+
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, playerItems);
+        userItemsList.setAdapter(itemsAdapter);
+    }
+
 
     private String grab() {
         ListView roomItemsList = (ListView) findViewById(R.id.roomItemSelector);
@@ -106,16 +115,16 @@ public class AdventureActivity extends Activity {
 
         //check if room has anything in it to grab
         //itemNum == -1 if room is empty
-        if(itemNum < 0) return "The room is empty.";
+        if(itemList.length == 0) return "The room is empty.";
+        else if(itemNum < 0) return "Select an item to grab.";
         else return model.grabItem(itemList[itemNum]);
     }
 
     private String drop() {
-        int itemNum;
-        ToggleButton itemSelector = (ToggleButton) findViewById(R.id.playerItemSelector);
-        if(itemSelector.isChecked())itemNum = 2;
-        else itemNum = 1;
-        return model.dropItem(itemNum);
+        ListView userItemsList = (ListView) findViewById(R.id.userItemSelector);
+        int itemNum = userItemsList.getCheckedItemPosition();
+        if(itemNum < 0) return "Select an item to drop.";
+        else return model.dropItem(itemNum+1);
     }
 
 }

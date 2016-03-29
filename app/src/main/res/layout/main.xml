@@ -5,48 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/roomView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.01"
-        android:text="@string/myView"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="0dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp" />
-    <TextView
-        android:id="@+id/myItems"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.01"
-        android:text="@string/myThings"
-        android:layout_below="@+id/goSouth"
-        android:layout_alignRight="@+id/goEast"
-        android:layout_alignEnd="@+id/goEast">
-        <requestFocus/></TextView>
+
 
     <Button
-        android:id="@+id/goUp"
+        android:id="@+id/grab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/up"
+        android:text="@string/grab"
         android:onClick="myClickHandler"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/goDown"
-        android:layout_alignStart="@+id/goDown" />
+        android:layout_marginTop="138dp"
+        android:layout_below="@+id/roomView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <Button
-        android:id="@+id/goDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.01"
-        android:text="@string/down"
-        android:onClick="myClickHandler"
-        android:layout_below="@+id/goUp"
-        android:layout_alignLeft="@+id/goEast"
-        android:layout_alignStart="@+id/goEast" />
     <Button
         android:id="@+id/goNorth"
         android:layout_width="wrap_content"
@@ -54,7 +26,7 @@
         android:layout_weight="0.01"
         android:text="@string/north"
         android:onClick="myClickHandler"
-        android:layout_above="@+id/goWest"
+        android:layout_above="@+id/goSouth"
         android:layout_toRightOf="@+id/goWest"
         android:layout_toEndOf="@+id/goWest" />
     <Button
@@ -64,8 +36,7 @@
         android:layout_weight="0.01"
         android:text="@string/south"
         android:onClick="myClickHandler"
-        android:layout_alignBaseline="@+id/playerItemSelector"
-        android:layout_alignBottom="@+id/playerItemSelector"
+        android:layout_below="@+id/goUp"
         android:layout_toLeftOf="@+id/goEast"
         android:layout_toStartOf="@+id/goEast" />
     <Button
@@ -85,20 +56,21 @@
         android:layout_weight="0.01"
         android:text="@string/west"
         android:onClick="myClickHandler"
-        android:layout_above="@+id/goSouth"
+        android:layout_below="@+id/goNorth"
         android:layout_toLeftOf="@+id/goSouth"
         android:layout_toStartOf="@+id/goSouth" />
 
     <Button
-        android:id="@+id/grab"
+        android:id="@+id/goUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/grab"
+        android:text="@string/up"
         android:onClick="myClickHandler"
-        android:layout_above="@+id/goWest"
-        android:layout_toLeftOf="@+id/goWest"
-        android:layout_toStartOf="@+id/goWest" />
+        android:layout_below="@+id/roomItemSelector"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp" />
 
     <Button
         android:id="@+id/drop"
@@ -107,33 +79,76 @@
         android:layout_weight="0.01"
         android:text="@string/drop"
         android:onClick="myClickHandler"
-        android:layout_above="@+id/playerItemSelector"
-        android:layout_alignLeft="@+id/grab"
-        android:layout_alignStart="@+id/grab" />
+        android:layout_below="@+id/goEast"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="23dp" />
 
-    <ToggleButton
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PlayerItemSelector"
-        android:id="@+id/playerItemSelector"
-        android:textOn="@string/playerToggleOn"
-        android:textOff="@string/playerToggleOff"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/drop"
-        android:layout_alignStart="@+id/drop"
-        android:layout_marginBottom="45dp"
-        android:checked="false" />
+        android:text="@string/down"
+        android:id="@+id/goDown"
+        android:onClick="myClickHandler"
+        android:layout_alignTop="@+id/goWest"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/roomItemSelector"
-        android:layout_above="@+id/goNorth"
+        android:headerDividersEnabled="false"
+        android:choiceMode="singleChoice"
+        android:listSelector="#666666"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/goSouth"
-        android:layout_alignEnd="@+id/goSouth"
-        android:layout_alignTop="@+id/goUp"
-        android:headerDividersEnabled="false" />
+        android:layout_alignRight="@+id/goNorth"
+        android:layout_alignEnd="@+id/goNorth"
+        android:layout_alignBottom="@+id/grab"
+        android:layout_below="@+id/roomView" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userItemSelector"
+        android:choiceMode="singleChoice"
+        android:listSelector="#666666"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/goEast"
+        android:layout_toStartOf="@+id/goEast"
+        android:layout_below="@+id/goSouth" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        android:id="@+id/exit"
+        android:onClick="myClickHandler"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_alignBottom="@+id/exit"
+        android:layout_toLeftOf="@+id/goWest"
+        android:layout_toStartOf="@+id/goWest" />
+
+    <TextView
+        android:id="@+id/roomView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01"
+        android:text="@string/myView"
+        android:focusable="false"
+        android:scrollIndicators="right"
+        android:layout_below="@+id/exit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
