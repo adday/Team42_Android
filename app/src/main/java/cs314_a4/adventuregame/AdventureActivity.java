@@ -2,13 +2,19 @@ package cs314_a4.adventuregame;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+import android.widget.ToggleButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import cs314_A3.AdventureGameModelFacade;
-
+import cs314_A3.Item;
 
 
 public class AdventureActivity extends Activity {
@@ -24,16 +30,8 @@ public class AdventureActivity extends Activity {
 
         //initialize connection to model
         model = new AdventureGameModelFacade();
-        String viewText = model.getView();
 
-        // Get initial room view, and see my items.
-        TextView myView = (TextView) findViewById(R.id.roomView);
-        myView.setText(viewText);
-
-        TextView myItems = (TextView) findViewById(R.id.myItems);
-        myItems.setText(model.showItems());
-
-
+        displayCurrentInfo(model.getView());
     }
 
  // This method is called at button click because we assigned the name to the
@@ -41,49 +39,83 @@ public class AdventureActivity extends Activity {
  	public void myClickHandler(View view) {
         TextView myView = (TextView) findViewById(R.id.roomView);
         TextView myItems = (TextView) findViewById(R.id.myItems);
-        TextView myMove = (TextView) findViewById(R.id.myMove);
-        String move;
+        String actionResult = "";
 
         switch (view.getId()) {
             case R.id.goUp:
-                move = model.goUp();
-                myView.setText(model.getView());
-                myMove.setText(move);
+                actionResult = model.goUp();
                 break;
             case R.id.goDown:
-                move = model.goDown();
-                myView.setText(model.getView());
-                myMove.setText(move);
+                actionResult = model.goDown();
                 break;
             case R.id.goNorth:
-                move = model.goNorth();
-                myView.setText(model.getView());
-                myMove.setText(move);
+                actionResult = model.goNorth();
                 break;
             case R.id.goSouth:
-                move = model.goSouth();
-                myView.setText(model.getView());
-                myMove.setText(move);
+                actionResult = model.goSouth();
                 break;
             case R.id.goEast:
-                move = model.goEast();
-                myView.setText(model.getView());
-                myMove.setText(move);
+                actionResult = model.goEast();
                 break;
             case R.id.goWest:
-                move = model.goWest();
-                myView.setText(model.getView());
-                myMove.setText(move);
+                actionResult = model.goWest();
                 break;
             case R.id.drop:
-
-                myItems.setText(model.showItems());
+                actionResult = drop();
                 break;
             case R.id.grab:
-
-                myItems.setText(model.showItems());
+                actionResult = grab();
                 break;
         }
+        displayCurrentInfo(actionResult);
+    }
+
+    // private methods
+    // updates info displayed in GUI any time a button is pushed
+    private void displayCurrentInfo(String result){
+        TextView myView = (TextView) findViewById(R.id.roomView);
+        myView.setText(model.getView() + '\n' + result);
+
+        TextView myItems = (TextView) findViewById(R.id.myItems);
+        myItems.setText(model.showItems());
+
+        updateRoomItems();
+    }
+
+    //updates room items comboBox to reflect what's currently in the room
+    @SuppressWarnings("unchecked")
+    private void updateRoomItems(){
+        ListView roomItemsList = (ListView) findViewById(R.id.roomItemSelector);
+
+        Item[] itemList = model.getRoomContents();
+        ArrayList<String> roomItems = new ArrayList<String>();
+        for(int i = 0; i < itemList.length; i++)
+            roomItems.add(itemList[i].getDesc());
+
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, roomItems);
+        roomItemsList.setAdapter(itemsAdapter);
+    }
+
+
+    private String grab() {
+        ListView roomItemsList = (ListView) findViewById(R.id.roomItemSelector);
+
+        //get items currently in room and which item the user selected
+        Item[] itemList = model.getRoomContents();
+        int itemNum = roomItemsList.getCheckedItemPosition();
+
+        //check if room has anything in it to grab
+        //itemNum == -1 if room is empty
+        if(itemNum < 0) return "The room is empty.";
+        else return model.grabItem(itemList[itemNum]);
+    }
+
+    private String drop() {
+        int itemNum;
+        ToggleButton itemSelector = (ToggleButton) findViewById(R.id.playerItemSelector);
+        if(itemSelector.isChecked())itemNum = 2;
+        else itemNum = 1;
+        return model.dropItem(itemNum);
     }
 
 }
