@@ -100,14 +100,16 @@ public class Player {
 	public void drop(int itemNum){
 		if (itemNum > 0 & itemNum <= itemCount){
 			switch(itemNum){
-				case 1: { myLoc.addItem(myThings[0]);
-				myThings[0]=myThings[1];
-				itemCount--; 
-				break;
+				case 1: {
+					myLoc.addItem(myThings[0]);
+					myThings[0]=myThings[1];
+					itemCount--;
+					break;
 				}
-				case 2: { myLoc.addItem(myThings[1]);
-				itemCount--;
-				break;
+				case 2: {
+					myLoc.addItem(myThings[1]);
+					itemCount--;
+					break;
 				} 
 			}
 		}

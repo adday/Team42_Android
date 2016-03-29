@@ -105,14 +105,7 @@ public class Room implements CaveSite {
 	 * and progessively adding to the String to be returned and then returning it
 	 * */
 	public String getDesc(){
-		ListIterator<Item> roomContents = contents.listIterator(); 
-		String contentString = "";
-		while(roomContents.hasNext())
-			contentString = 
-			contentString + (roomContents.next()).getDesc() + " ";
-
-		return description + '\n' + '\n' +
-				"Room Contents: " + contentString + '\n';
+		return description;
 	}
 
 }
