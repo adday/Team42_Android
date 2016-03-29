@@ -1,50 +1,47 @@
-User Story 1. As a game player, I want to use a GUI
-              so that the Adventure game is easier to play.
+User Story 1 (10 PTS): As a game player, I want an improved GUI for the Adventure game,
+                so that I can play the game on an Android device.
 
     @Acceptance Criteria:
-        The game uses a GUI for all commands previously available as text commands.
-        
+        -The game works on an Android device emulation, or an actual Android device.
+          All commands available in previous versions of the game are accessible and work properly
+          on the Android device.
 
 
-Split Story B. (8 SP) As a CS 314 student, I want to implement Dr. Bieman's
-               model-view separation design and get the game working with this GUI.
-    @Acceptance Criteria:
-          - The game uses a BreezeSwing GUI for all commands previously
-             available as text commands.
+Split Story B (2 PTS): As a CS 314 student, I want to evaluate my Android GUI with respect to usability,
+                        so that I can provide evidence and rationale for subsequent GUI design changes.
+    @Acceptance Criteria (AC):
+        - Two usability goals are evaluated:
+            (a) Efficiency of the user interacting with the user interface to complete a task.
+                A typical task related to efficiency might be to explore all rooms. Another task related to
+                efficiency might be to find treasure ("gold bars" for example) and bring it out of the cave.
+            (b) Effectiveness of the user interface in causing the program to follow the user's intent.
+                A typical task related to effectiveness might be to go in a desired direction. Another
+                task related to effectiveness might be to pick up and/or drop the desired items.
+        - Two questions based on specific user tasks are created for each of the 2 usability goals.
+        - Answering all 4 questions generates data that can drive design changes in the GUI, and that can provide rationale for design improvement. No question can be answered with a simple "yes" or "no" answer.
+        - Meet 'Definition of Done' (DoD), below.
 
     @Tasks (estimation/actual time):
-          *(1hr) Learn BreezySwing
-          *(1hr) Learn JUnit
-          *(2hr) Study class diagram and code and figure out what code needs
-            to be added to connect facade methods to AdventureGame code.
-            Add code accordingly.
-          *(1hr) Create JUnit tests for allnew methods added to any class and for all
-            methods in new classes.
-          *(1hr) Move all text string output and make sure it is included in the GUI correctly.
-
-
-
-
-
-
+            *(2hrs/) Think up 4 questions that would produce fruitful answers
+            *(2hrs/) Answer Questions / Use application
+            *(1hr/) Type up results in 'overview.txt'
+            *(1hr/) Ensure that DoD and rubric are both met
 
 
 ---------------------------------------------------------------
 @ Definition of Done:
 For all user stories:
-- GitHub main branch code runs with no warnings and a user can
-   access a GUI to execute all commands that were possible from the command line version
-- All code changes are reviewed before being merged onto the main branch (see A1,
-   tutorial 5 for instructions on the GitHub Pull Request Code Review System you must
-   use for reviews)
-- All code changes are merged into the main branch
-- All code is unit tested and all tests pass
+
+    - GitHub main branch code runs with no warnings and a user can execute all commands at least using the GUI.
+    - All code changes are reviewed before being merged onto the main branch (see A1, tutorial 5
+        for instructions on the GitHub Pull Request Code Review System you must use for reviews)
+    - All code changes are merged into the main branch
 
 For CS314 development:
-- All work is done on individual branches with frequent commits and pushes to
-   GitHub before being merged onto the main branch (do frequent commits and
-   pushes to prevent losing work, and do pushes so others can use your work)
-- Commit messages include user story and task
-- All user stories and point estimates are in GitHub
-- All tasks and time estimates and actual time taken are in GitHub
-- The overview.txt file for A2 has all required items in it
+
+    - All work is done on individual branches with frequent commits and pushes to GitHub
+        before being merged onto the main branch.
+    - Commit messages include user story and task
+    - All user stories and point estimates are in GitHub
+    - All tasks and time estimates and actual time taken are in GitHub
+    - The overview.txt file for A4 has all required items in it
