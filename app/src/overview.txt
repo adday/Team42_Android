@@ -1,22 +1,62 @@
 @Team members:
+-----------------------------------------------
 -Adrion Q Arkenberg
 -Alex Day
 -Ed Okvath
 
+
 @Specific contributions by each person:
+-----------------------------------------------
 -Alex Day: 	
 
 -Ed Okvath:
 
 -Adrion Q Arkenberg:
 
+
 @Time (hours) spent by each person on this assignment:
+-----------------------------------------------
 Alex Day:
 Ed Okvath:
 Adrion Q Arkenberg:
 
+
 @CSU Honor Pledge:
+-----------------------------------------------
 I have not given, received, or used any unauthorized assistance.
 -Adrion Q Arkenberg
 -Alex Day
 -Ed Okvath
+
+@Challenges Faced while replacing GUI:
+-----------------------------------------------
+1)  Getting Android Studio to work smoothly, and function with Github was
+    definitely one of the harder tasks of the assignment. It seemed like there were
+    endless bugs, and fixing one would lead to another.
+
+
+
+@Test Information:
+------------------------------------------------
+- # of new tests written:
+- # of new defects found:
+- # of defects fixed:
+- Total # of tests run:
+- Total # tests passed:
+
+
+@User Interface Evaluation:
+------------------------------------------------
+Goal 1: Efficiency of the user interacting with the user interface
+  to complete a task based on typical tasks:
+  - Question 1:
+    Answer/Assessment:
+  - Question 2:
+    Answer/Assessment:
+
+Goal 2: Effectiveness of the user interface in causing the program to
+  follow the user's intent based on typical tasks:
+  - Question 1:
+    Answer/Assessment:
+  - Question 2:
+    Answer/Assessment:
