@@ -72,7 +72,7 @@ public class Player {
 	public void pickUp(Item i){
 		//ensure that the item is in the room that the player is in
 		ArrayList<Item> roomItems = new ArrayList<Item>(Arrays.asList(myLoc.getRoomContents()));
-		if(roomItems.contains(i)){
+		if(roomItems.contains(i) && (i != null)){
 			if (itemCount < 2) {
 				myThings[itemCount] = i;
 				itemCount++;

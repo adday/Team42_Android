@@ -44,9 +44,11 @@ public class Door implements CaveSite {
 
 	/** We can construct a door at the site. */
 	public Door(CaveSite out, CaveSite in, Key k){
-		outSite = out;
-		inSite = in;
-		myKey = k;
+		if(k != null){
+			outSite = out;
+			inSite = in;
+			myKey = k;
+		}
 	}
  
 	/** A player will need the correct key to enter. */

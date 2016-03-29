@@ -66,12 +66,16 @@ public class Room implements CaveSite {
 
 	// adds item to contents of the Room like when a player drops an item
 	public void addItem(Item theItem){
-		contents.add(theItem); 
+		//ensure that the item is not in the room already
+		if(!contents.contains(theItem) && (theItem != null))
+			contents.add(theItem);
 	}
 
 	// removes item from contents of the Room like when a player picks up an item
 	public void removeItem(Item theItem){
-		contents.remove(theItem);
+		//use a while loop to remove all copies of the item
+		while(contents.contains(theItem))
+			contents.remove(theItem);
 	}
 
 	// true if the Room has no contents

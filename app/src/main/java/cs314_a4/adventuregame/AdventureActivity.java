@@ -111,8 +111,6 @@ public class AdventureActivity extends Activity {
     }
 
     private String drop() {
-        //  combobox index because dropItem takes an int for item array index
-        //  add 1 to account for 1-based indexing
         int itemNum;
         ToggleButton itemSelector = (ToggleButton) findViewById(R.id.playerItemSelector);
         if(itemSelector.isChecked())itemNum = 2;
