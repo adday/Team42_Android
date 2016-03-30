@@ -66,7 +66,7 @@ public class Room implements CaveSite {
 
 	// adds item to contents of the Room like when a player drops an item
 	public void addItem(Item theItem){
-		//ensure that the item is not in the room already
+		//ensure that the item is not in the room already and is not null
 		if(!contents.contains(theItem) && (theItem != null))
 			contents.add(theItem);
 	}

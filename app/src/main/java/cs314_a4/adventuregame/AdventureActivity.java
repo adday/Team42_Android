@@ -1,12 +1,20 @@
 package cs314_a4.adventuregame;
+
+/**  Adventure Game  Program Code
+ Copyright (c) 1999 James M. Bieman
+ filename: AdventureActivity.java
+ Authors:
+ Adrion Q Arkenberg
+ Alex Day
+ Ed Okvath */
+
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 
@@ -19,7 +27,7 @@ public class AdventureActivity extends Activity {
     private AdventureGameModelFacade model;
 
 
-    /** Called when the activity is first created. */
+    // Called when the activity is first created.
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +36,6 @@ public class AdventureActivity extends Activity {
         //initialize connection to model and set inital view
         model = new AdventureGameModelFacade();
         TextView myView = (TextView) findViewById(R.id.roomView);
-        String myViewStr = model.getView();
         myView.setText("Explore the cave system and see what you can find.\nDon't get lost! \n\n"
                             + model.getView());
     }
@@ -71,6 +78,7 @@ public class AdventureActivity extends Activity {
     }
 
     // private methods
+
     // updates info displayed in GUI any time a button is pushed
     private void displayCurrentInfo(String result){
         TextView myView = (TextView) findViewById(R.id.roomView);
@@ -82,7 +90,7 @@ public class AdventureActivity extends Activity {
         updateUserItems();
     }
 
-    //updates room items comboBox to reflect what's currently in the room
+    //updates room items selector to reflect what's currently in the room
     @SuppressWarnings("unchecked")
     private void updateRoomItems(){
         ListView roomItemsList = (ListView) findViewById(R.id.roomItemSelector);
@@ -96,7 +104,7 @@ public class AdventureActivity extends Activity {
         roomItemsList.setAdapter(itemsAdapter);
     }
 
-    //updates room items comboBox to reflect what's currently in the room
+    //updates user items selector to reflect what's currently in the inventory
     @SuppressWarnings("unchecked")
     private void updateUserItems(){
         ListView userItemsList = (ListView) findViewById(R.id.userItemSelector);
@@ -119,8 +127,8 @@ public class AdventureActivity extends Activity {
         int itemNum = roomItemsList.getCheckedItemPosition();
 
         //check if room has anything in it to grab
-        //itemNum == -1 if room is empty
         if(itemList.length == 0) return "The room is empty.";
+        //check if an item is selected to grab
         else if(itemNum < 0) return "Select an item to grab.";
         else return model.grabItem(itemList[itemNum]);
     }
@@ -128,7 +136,10 @@ public class AdventureActivity extends Activity {
     private String drop() {
         ListView userItemsList = (ListView) findViewById(R.id.userItemSelector);
         int itemNum = userItemsList.getCheckedItemPosition();
+
+        //check if player has item to drop
         if(model.getPlayerNumOfItemsCarried() == 0) return "You have no items to drop.";
+        //check if an item is selected to drop
         else if(itemNum < 0) return "Select an item to drop.";
         else return model.dropItem(itemNum+1);
     }

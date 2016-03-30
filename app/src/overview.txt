@@ -39,17 +39,25 @@ I have not given, received, or used any unauthorized assistance.
 
 2)  Deciding on Android interface views to appropriately interact with the Adventure Game
     took a good deal of trial and error. The difficult selection process of appropriate views was
-    eased with lots of Google searches.
+    eased with lots of Google searches. Using the RelativeLayout was a pain to use
+    as small changes in the position on one View often resulted in dramatic, undesired changes
+    in the entire layout.
 
+3)  Adding new prompts in order to aid the user in understanding how to play the game was difficult
+    as it required analysis of the Android View's logic aspects that are not immediately obvious.
+
+4)  Using the RelativeLayout was a pain to use as small changes in the position on one View often
+    resulted in dramatic, undesired changes in the entire layout. The only way to solve the issues
+    that it presented was with patience and diligence in correcting the error as they were created.
 
 
 @Test Information:
 ------------------------------------------------
-- # of new tests written:
-- # of new defects found:
-- # of defects fixed:
-- Total # of tests run:
-- Total # tests passed:
+- # of new tests written: 7
+- # of new defects found: 6
+- # of defects fixed: 6
+- Total # of tests run: 44
+- Total # tests passed: 44
 
 
 @User Interface Evaluation:
@@ -60,23 +68,34 @@ Goal 1: Efficiency of the user interacting with the user interface
 
     Answer/Assessment: The layout is pretty self-explanatory.
     Dropping and picking up items might be a little confusing at first,
-    but it seems simple enough to work.
+    but it seems simple enough to work. The layout does not offer many
+    instructions to the user as to how it is to be used, however due to
+    the simplicity of the game it is fairly easy to figure out.
 
   - Question 2: How does the interface respond to gameplay?
 
     Answer/Assessment: It does not lag and responds to input as expected,
     however, due to the text view constantly changing size the interface gets
-    moved around.
+    moved around. The issue of the interface resizing does not hinder functionality
+    as all features that are needed for the user to interact with the game are always
+    available. However, this is only the case in portrait layout mode, if the screen is
+    rotated to landscape mode the buttons move off of the screen. Correcting this would
+    help the functionality of the game as it is moved to various devices.
 
 Goal 2: Effectiveness of the user interface in causing the program to
   follow the user's intent based on typical tasks:
   - Question 1: How easy is it for the user to navigate through a given adventure with the interface?
 
     Answer/Assessment: Controls are simple enough to allow the user to navigate and explore
-    the adventure.
+    the adventure. There are prompts that notify the user of the current situation as buttons are
+    clicked, such as whether there are items to drop or pick up as well as when they need to select
+    an item. There is also a short greeting prompt that does not describe functionality but serves
+    to set up the game- as opposed to just entering the game without a prompt.
 
   - Question 2: How easy is it to interact with items i.e. pick up, drop, and use items?
 
     Answer/Assessment: Functionality of all of these actions were thoroughly tested and are
     simple enough for anybody to use. It does take two steps to pick up/drop items, but that comes
-    with the feature of having multiple items in the game.
+    with the feature of having multiple items in the game. Using items is still done automatically
+    by the game, with the only item that has "use" being keys. Future interaction could include
+    being able to sell the bag of gold bars to a random dude hanging outside the cave when you exit.
