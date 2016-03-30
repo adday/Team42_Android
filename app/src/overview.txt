@@ -71,5 +71,5 @@ Goal 2: Effectiveness of the user interface in causing the program to
   - Question 2: How easy is it to interact with items i.e. pick up, drop, and use items?
 
     Answer/Assessment: Functionality of all of these actions were thoroughly tested and are
-    simple enough for anybody to use. It does take 2 steps to pick up/drop items, but that comes
+    simple enough for anybody to use. It does take two steps to pick up/drop items, but that comes
     with the feature of having multiple items in the game.
