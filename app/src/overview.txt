@@ -14,14 +14,18 @@
 
 -Ed Okvath:
 
--Adrion Q Arkenberg:
+-Adrion Q Arkenberg: Setup project and did initial commit.  Wrote UserStories, as well as overview.txt
+                     file shell.  Worked with Alex to fix original bugs that were not found in A3.
+                     Was with everyone doing "over-the-shoulder" development as well.
+
+
 
 
 @Time (hours) spent by each person on this assignment:
 -----------------------------------------------
 Alex Day: 9
 Ed Okvath:
-Adrion Q Arkenberg:
+Adrion Q Arkenberg: 7
 
 
 @CSU Honor Pledge:
