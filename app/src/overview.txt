@@ -49,14 +49,27 @@ I have not given, received, or used any unauthorized assistance.
 ------------------------------------------------
 Goal 1: Efficiency of the user interacting with the user interface
   to complete a task based on typical tasks:
-  - Question 1:
-    Answer/Assessment:
-  - Question 2:
-    Answer/Assessment:
+  - Question 1: How simple is the layout of the interface?
+
+    Answer/Assessment: The layout is pretty self-explanatory.
+    Dropping and picking up items might be a little confusing at first,
+    but it seems simple enough to work.
+
+  - Question 2: How does the interface respond to gameplay?
+
+    Answer/Assessment: It does not lag and responds to input as expected,
+    however, due to the text view constantly changing size the interface gets
+    moved around.
 
 Goal 2: Effectiveness of the user interface in causing the program to
   follow the user's intent based on typical tasks:
-  - Question 1:
-    Answer/Assessment:
-  - Question 2:
-    Answer/Assessment:
+  - Question 1: How easy is it for the user to navigate through a given adventure with the interface?
+
+    Answer/Assessment: Controls are simple enough to allow the user to navigate and explore
+    the adventure.
+
+  - Question 2: How easy is it to interact with items i.e. pick up, drop, and use items?
+
+    Answer/Assessment: Functionality of all of these actions were thoroughly tested and are
+    simple enough for anybody to use. It does take two steps to pick up/drop items, but that comes
+    with the feature of having multiple items in the game.
