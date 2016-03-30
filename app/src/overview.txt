@@ -12,7 +12,9 @@
             output generated from the model facade. Worked with Adrion to fix bugs that
             were not found in A3.
 
--Ed Okvath:
+-Ed Okvath: Wrote questions and assessments for the project's interface. Worked with Alex to fix bugs
+            as well as improve the quality of the user interface. Was apart of "over-the-shoulder" development
+            to create the app as well.
 
 -Adrion Q Arkenberg: Setup project and did initial commit.  Wrote UserStories, as well as overview.txt
                      file shell.  Worked with Alex to fix original bugs that were not found in A3.
@@ -24,7 +26,7 @@
 @Time (hours) spent by each person on this assignment:
 -----------------------------------------------
 Alex Day: 9
-Ed Okvath:
+Ed Okvath: 8
 Adrion Q Arkenberg: 7
 
 
