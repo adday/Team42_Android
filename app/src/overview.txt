@@ -7,7 +7,10 @@
 
 @Specific contributions by each person:
 -----------------------------------------------
--Alex Day: 	
+-Alex Day: 	Developed interface to run Adventure Game on Android device. this included
+            implementing buttons and selector controls as well as interaction with text
+            output generated from the model facade. Worked with Adrion to fix bugs that
+            were not found in A3.
 
 -Ed Okvath:
 
@@ -16,7 +19,7 @@
 
 @Time (hours) spent by each person on this assignment:
 -----------------------------------------------
-Alex Day:
+Alex Day: 9
 Ed Okvath:
 Adrion Q Arkenberg:
 
@@ -33,6 +36,10 @@ I have not given, received, or used any unauthorized assistance.
 1)  Getting Android Studio to work smoothly, and function with Github was
     definitely one of the harder tasks of the assignment. It seemed like there were
     endless bugs, and fixing one would lead to another.
+
+2)  Deciding on Android interface views to appropriately interact with the Adventure Game
+    took a good deal of trial and error. The difficult selection process of appropriate views was
+    eased with lots of Google searches.
 
 
 

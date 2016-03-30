@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/testView0"
+    android:id="@+id/mainScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#c7eeb7">
 
 
     <Button
@@ -17,7 +18,8 @@
         android:layout_marginTop="138dp"
         android:layout_below="@+id/roomView"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="#4f81d1" />
 
     <Button
         android:id="@+id/goNorth"
@@ -28,7 +30,8 @@
         android:onClick="myClickHandler"
         android:layout_above="@+id/goSouth"
         android:layout_toRightOf="@+id/goWest"
-        android:layout_toEndOf="@+id/goWest" />
+        android:layout_toEndOf="@+id/goWest"
+        android:backgroundTint="#9f5622" />
     <Button
         android:id="@+id/goSouth"
         android:layout_width="wrap_content"
@@ -38,7 +41,8 @@
         android:onClick="myClickHandler"
         android:layout_below="@+id/goUp"
         android:layout_toLeftOf="@+id/goEast"
-        android:layout_toStartOf="@+id/goEast" />
+        android:layout_toStartOf="@+id/goEast"
+        android:backgroundTint="#9f5622" />
     <Button
         android:id="@+id/goEast"
         android:layout_width="wrap_content"
@@ -48,7 +52,8 @@
         android:onClick="myClickHandler"
         android:layout_below="@+id/goNorth"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="#9f5622" />
     <Button
         android:id="@+id/goWest"
         android:layout_width="wrap_content"
@@ -58,7 +63,8 @@
         android:onClick="myClickHandler"
         android:layout_below="@+id/goNorth"
         android:layout_toLeftOf="@+id/goSouth"
-        android:layout_toStartOf="@+id/goSouth" />
+        android:layout_toStartOf="@+id/goSouth"
+        android:backgroundTint="#9f5622" />
 
     <Button
         android:id="@+id/goUp"
@@ -70,7 +76,8 @@
         android:layout_below="@+id/roomItemSelector"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="21dp" />
+        android:layout_marginTop="21dp"
+        android:backgroundTint="#9f5622" />
 
     <Button
         android:id="@+id/drop"
@@ -82,7 +89,8 @@
         android:layout_below="@+id/goEast"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="23dp" />
+        android:layout_marginTop="23dp"
+        android:backgroundTint="#4f81d1" />
 
     <Button
         android:layout_width="wrap_content"
@@ -92,7 +100,8 @@
         android:onClick="myClickHandler"
         android:layout_alignTop="@+id/goWest"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#9f5622" />
 
     <ListView
         android:layout_width="wrap_content"
@@ -106,7 +115,9 @@
         android:layout_alignRight="@+id/goNorth"
         android:layout_alignEnd="@+id/goNorth"
         android:layout_alignBottom="@+id/grab"
-        android:layout_below="@+id/roomView" />
+        android:foregroundGravity="top"
+        android:layout_below="@+id/roomView"
+        style="@style/TextAppearance.AppCompat.Small" />
 
     <ListView
         android:layout_width="wrap_content"
@@ -128,16 +139,9 @@
         android:id="@+id/exit"
         android:onClick="myClickHandler"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:layout_alignBottom="@+id/exit"
-        android:layout_toLeftOf="@+id/goWest"
-        android:layout_toStartOf="@+id/goWest" />
+        android:layout_alignRight="@+id/grab"
+        android:layout_alignEnd="@+id/grab"
+        android:backgroundTint="#9f5622" />
 
     <TextView
         android:id="@+id/roomView"
@@ -147,8 +151,33 @@
         android:text="@string/myView"
         android:focusable="false"
         android:scrollIndicators="right"
+        android:focusableInTouchMode="false"
+        android:gravity="top"
         android:layout_below="@+id/exit"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textAlignment="center"
+        android:textColor="#7e7878"
+        android:textIsSelectable="false"
+        android:textSize="@dimen/abc_text_size_small_material" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:id="@+id/titleTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/exit"
+        android:layout_toStartOf="@+id/exit"
+        android:background="#4f81d1"
+        android:textSize="@dimen/abc_text_size_title_material"
+        android:textStyle="normal"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical" />
 
 </RelativeLayout>

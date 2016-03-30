@@ -3,6 +3,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -24,10 +25,12 @@ public class AdventureActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        //initialize connection to model
+        //initialize connection to model and set inital view
         model = new AdventureGameModelFacade();
-
-        displayCurrentInfo("");
+        TextView myView = (TextView) findViewById(R.id.roomView);
+        String myViewStr = model.getView();
+        myView.setText("Explore the cave system and see what you can find.\nDon't get lost! \n\n"
+                            + model.getView());
     }
 
  // This method is called at button click because we assigned the name to the
@@ -71,7 +74,9 @@ public class AdventureActivity extends Activity {
     // updates info displayed in GUI any time a button is pushed
     private void displayCurrentInfo(String result){
         TextView myView = (TextView) findViewById(R.id.roomView);
-        myView.setText(model.getView() + '\n' + result);
+        String myViewStr = model.getView() + "\n\n" + result;
+        if(!model.roomEmpty()) myViewStr = myViewStr + "\nThe room contains";
+        myView.setText(myViewStr);
 
         updateRoomItems();
         updateUserItems();
@@ -123,7 +128,8 @@ public class AdventureActivity extends Activity {
     private String drop() {
         ListView userItemsList = (ListView) findViewById(R.id.userItemSelector);
         int itemNum = userItemsList.getCheckedItemPosition();
-        if(itemNum < 0) return "Select an item to drop.";
+        if(model.getPlayerNumOfItemsCarried() == 0) return "You have no items to drop.";
+        else if(itemNum < 0) return "Select an item to drop.";
         else return model.dropItem(itemNum+1);
     }
 
