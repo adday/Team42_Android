@@ -74,7 +74,7 @@ public class AdventureActivity extends Activity {
     // updates info displayed in GUI any time a button is pushed
     private void displayCurrentInfo(String result){
         TextView myView = (TextView) findViewById(R.id.roomView);
-        String myViewStr = model.getView() + '\n' + result;
+        String myViewStr = model.getView() + "\n\n" + result;
         if(!model.roomEmpty()) myViewStr = myViewStr + "\nThe room contains";
         myView.setText(myViewStr);
 
