@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/testView0"
+    android:id="@+id/mainScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#8bcd84">
 
 
     <Button
@@ -106,7 +107,9 @@
         android:layout_alignRight="@+id/goNorth"
         android:layout_alignEnd="@+id/goNorth"
         android:layout_alignBottom="@+id/grab"
-        android:layout_below="@+id/roomView" />
+        android:foregroundGravity="top"
+        android:layout_below="@+id/roomView"
+        style="@style/TextAppearance.AppCompat.Small" />
 
     <ListView
         android:layout_width="wrap_content"
@@ -128,16 +131,8 @@
         android:id="@+id/exit"
         android:onClick="myClickHandler"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:layout_alignBottom="@+id/exit"
-        android:layout_toLeftOf="@+id/goWest"
-        android:layout_toStartOf="@+id/goWest" />
+        android:layout_alignRight="@+id/grab"
+        android:layout_alignEnd="@+id/grab" />
 
     <TextView
         android:id="@+id/roomView"
@@ -147,8 +142,25 @@
         android:text="@string/myView"
         android:focusable="false"
         android:scrollIndicators="right"
+        android:focusableInTouchMode="false"
+        android:gravity="top"
         android:layout_below="@+id/exit"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/exit"
+        android:layout_toLeftOf="@+id/exit"
+        android:layout_toStartOf="@+id/exit"
+        android:textAlignment="center"
+        android:textSize="@dimen/abc_text_size_title_material"
+        android:textStyle="bold" />
 
 </RelativeLayout>

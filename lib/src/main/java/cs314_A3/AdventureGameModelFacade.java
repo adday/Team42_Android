@@ -84,6 +84,8 @@ public class AdventureGameModelFacade {
 	  return thePlayer.getItems();
   }
 
+  public boolean roomEmpty(){return thePlayer.getLoc().roomEmpty();}
+
   public int getPlayerNumOfItemsCarried(){
 	  return thePlayer.numItemsCarried();
   }
@@ -92,6 +94,7 @@ public class AdventureGameModelFacade {
   public Room getRoom(){
 	  return thePlayer.getLoc();
   }
+
   public Player getPlayer(){
 	  return thePlayer;
   }
