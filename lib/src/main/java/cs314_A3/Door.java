@@ -44,7 +44,8 @@ public class Door implements CaveSite {
 
 	/** We can construct a door at the site. */
 	public Door(CaveSite out, CaveSite in, Key k){
-		if(k != null){
+		//ensure key is not null and that the cavesites are not doors themselves
+		if(k != null && (out.getClass() != Door.class) && (in.getClass() != Door.class)){
 			outSite = out;
 			inSite = in;
 			myKey = k;

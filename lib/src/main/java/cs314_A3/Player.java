@@ -70,8 +70,8 @@ public class Player {
 	 * removeItem() is then called to remove the item from the room
 	 *  */
 	public void pickUp(Item i){
-		//ensure that the item is in the room that the player is in
 		ArrayList<Item> roomItems = new ArrayList<Item>(Arrays.asList(myLoc.getRoomContents()));
+		//ensure that the item is in the room that the player is in and it is not null
 		if(roomItems.contains(i) && (i != null)){
 			if (itemCount < 2) {
 				myThings[itemCount] = i;
