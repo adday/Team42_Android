@@ -19,13 +19,13 @@ Split Story A (8 PTS): As a CS 314 student, I want to create a new GUI as a new 
         - Meet 'Definition of Done' (DoD), below.
 
     @Tasks (estimation/actual time):
-        *(1hr/.5hr) Download and install Android Studio
-        *(4hrs/4hrs) Learn how to use Android Studio
-        *(2hrs/2.5hrs) Build project and get Github to work with Android Studio
-        *(3hrs/3hrs) Add button functionality
-        *(2hrs/1hr) Test application
-        *(.5hr/.5hr) Document Work
-        *(1hr/1hr) Ensure that DoD and rubric are both met
+        who*(1hr/.5hr) Download and install Android Studio
+        who*(4hrs/4hrs) Learn how to use Android Studio
+        who*(2hrs/2.5hrs) Build project and get Github to work with Android Studio
+        who*(3hrs/3hrs) Add button functionality
+        who*(2hrs/1hr) Test application
+        who*(.5hr/.5hr) Document Work
+        who*(1hr/1hr) Ensure that DoD and rubric are both met
 
 
 
