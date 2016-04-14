@@ -13,14 +13,19 @@ package cs314_A3;
 
 public class AdventureGameModelFacade {
 	private Player thePlayer;
-	private Adventure theCave; 
-	private Room startRm; 
+	private Room startRm;
+    private AdventureFactory adventureFactory;
 
-  public AdventureGameModelFacade() { 
+  public AdventureGameModelFacade() {
+      adventureFactory = getAdventureFactory();
 	  thePlayer = new Player();
-	  theCave = new Adventure();
-	  startRm = theCave.createAdventure();
+	  startRm = adventureFactory.createAdventure();
 	  thePlayer.setRoom(startRm);
+  }
+
+  private AdventureFactory getAdventureFactory() {
+    // add logic to determine which level- currently hardcoded
+    return new LevelOneAdventureFactory();
   }
 
   //ALL 'go' methods simply use numbers corresponding to directions in original code
