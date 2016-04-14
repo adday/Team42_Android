@@ -15,6 +15,7 @@ public class AdventureGameModelFacade {
 	private Player thePlayer;
 	private Room startRm;
     private AdventureFactory adventureFactory;
+    private static int level = 0;
 
   public AdventureGameModelFacade() {
       adventureFactory = getAdventureFactory();
@@ -24,8 +25,18 @@ public class AdventureGameModelFacade {
   }
 
   private AdventureFactory getAdventureFactory() {
-    // add logic to determine which level- currently hardcoded
-    return new LevelOneAdventureFactory();
+    if(level == 0)
+        return new LevelOneAdventureFactory();
+    else
+        return new LevelTwoAdventureFactory();
+  }
+
+  public boolean levelComplete(){
+    if(thePlayer.haveItem(adventureFactory.getWinningItem()) && thePlayer.getLoc() == startRm){
+      level = (level+1) % 2;
+      return true;}
+    else
+      return false;
   }
 
   //ALL 'go' methods simply use numbers corresponding to directions in original code

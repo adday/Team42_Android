@@ -28,10 +28,10 @@ public class AdventureActivity extends Activity {
         //initialize connection to model and set inital view
         model = new AdventureGameModelFacade();
         TextView myView = (TextView) findViewById(R.id.roomView);
-        String myViewStr = model.getView();
-        myView.setText("Explore the cave system and see what you can find.\nDon't get lost! \n\n"
+        myView.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
                             + model.getView());
     }
+
 
  // This method is called at button click because we assigned the name to the
  	// "On Click property" of the button
@@ -69,10 +69,20 @@ public class AdventureActivity extends Activity {
     }
 
     // private methods
+
+    // check if level is complete to reset GUI connection appropriately
+    private String updateLevel(){
+        if(model.levelComplete()){
+            model = new AdventureGameModelFacade();
+            return "Level complete, onto a new adventure!\n\n";}
+        else
+            return "";
+    }
+
     // updates info displayed in GUI any time a button is pushed
     private void displayCurrentInfo(String result){
         TextView myView = (TextView) findViewById(R.id.roomView);
-        String myViewStr = model.getView() + "\n\n" + result;
+        String myViewStr = "\n" + updateLevel() + model.getView() + "\n\n" + result;
         if(!model.roomEmpty()) myViewStr = myViewStr + "\nThe room contains";
         myView.setText(myViewStr);
 
@@ -80,7 +90,7 @@ public class AdventureActivity extends Activity {
         updateUserItems();
     }
 
-    //updates room items comboBox to reflect what's currently in the room
+    // updates room items comboBox to reflect what's currently in the room
     @SuppressWarnings("unchecked")
     private void updateRoomItems(){
         ListView roomItemsList = (ListView) findViewById(R.id.roomItemSelector);

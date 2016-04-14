@@ -4,6 +4,8 @@ package cs314_A3;
  */
 
 public class LevelOneAdventureFactory implements AdventureFactory {
+    Item winningItem;
+
     @Override
     public Room createAdventure() {
       // The outside:
@@ -120,8 +122,12 @@ public class LevelOneAdventureFactory implements AdventureFactory {
     r10.setSide(5,theDoor);
     r11.setSide(4,theDoor);
 
- // Now return the entrance:
-    return outside;
+ // Now set winning item and return the entrance:
+        winningItem = theTreasure;
+        return outside;
     }
 
+    public Item getWinningItem(){
+        return winningItem;
+    }
 }
