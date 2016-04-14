@@ -27,12 +27,20 @@ public class Item {
 
 	private String description;
 
+	private int currRoom = -2;
+
 	public void setDesc(String d){
 		description = d;
 	}
 
 	public String getDesc(){
 		return description;
+	}
+
+	public int getCurrRoom(){return currRoom;}
+
+	public void setCurrRoom(int roomNum){
+		currRoom = roomNum;
 	}
 
 }

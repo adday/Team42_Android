@@ -2,6 +2,7 @@ package cs314_A3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**  Adventure Game  Program Code
      Copyright (c) 1999 James M. Bieman
@@ -40,14 +41,19 @@ public class Player {
 	// Room used for player location
 	private Room myLoc;
 
+	private int playerRoomNum = -1; //set default roomNum to invalid
+
 	private Item[] myThings = new Item[2];
 
 	private int itemCount = 0;
+
+	private HashMap<String,Integer> stateHolder = new HashMap<>();
 
 	/* Method for functionality, not something the player directly activates
    For when the player changes rooms*/
 	public void setRoom(Room r){
 		myLoc = r;
+		playerRoomNum = r.getRoomNum();
 	}
 
 	/* Method for the Player to check what is around them using getDesc() from the Room class
@@ -61,7 +67,8 @@ public class Player {
   direction that they moved
 	 */
 	public String go(int direction){
-		return myLoc.exit(direction,this);
+		//player's room number is set in Room's 'enter' method when Player.setRoom is called
+		return myLoc.exit(direction, this);
 	}
 
 	/* For picking up items. Players are limited to 2 items so this does nothing 
@@ -75,6 +82,7 @@ public class Player {
 		if(roomItems.contains(i) && (i != null)){
 			if (itemCount < 2) {
 				myThings[itemCount] = i;
+				i.setCurrRoom(-1); //update to 'player' value (ie -1)
 				itemCount++;
 				myLoc.removeItem(i);
 					}
@@ -102,12 +110,14 @@ public class Player {
 			switch(itemNum){
 				case 1: {
 					myLoc.addItem(myThings[0]);
+					myThings[0].setCurrRoom(playerRoomNum); //set items room# to player's room
 					myThings[0]=myThings[1];
 					itemCount--;
 					break;
 				}
 				case 2: {
 					myLoc.addItem(myThings[1]);
+					myThings[1].setCurrRoom(playerRoomNum); //set items room# to player's room
 					itemCount--;
 					break;
 				} 
@@ -137,6 +147,12 @@ public class Player {
 
 	// Returns how many items the Player is carrying
 	public int numItemsCarried(){return itemCount;}
+
+	//Returns hashmap containing state of game
+	public HashMap<String,Integer> getGameState(){return stateHolder;}
+
+	//get player's room number
+	public int getPlayerRoomNum(){return playerRoomNum;}
 
 }
 
