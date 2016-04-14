@@ -22,10 +22,10 @@ Split Story A (8 PTS): As a CS 314 student, I want to create a new GUI as a new 
         *(1hr/.5hr) Download and install Android Studio
         *(4hrs/4hrs) Learn how to use Android Studio
         *(2hrs/2.5hrs) Build project and get Github to work with Android Studio
-        *(3hrs/) Add button functionality
-        *(2hrs/) Test application
-        *(.5hr/) Document Work
-        *(1hr/) Ensure that DoD and rubric are both met
+        *(3hrs/3hrs) Add button functionality
+        *(2hrs/1hr) Test application
+        *(.5hr/.5hr) Document Work
+        *(1hr/1hr) Ensure that DoD and rubric are both met
 
 
 

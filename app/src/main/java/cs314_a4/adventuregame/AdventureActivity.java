@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 import cs314_A3.AdventureGameModelFacade;
 import cs314_A3.Item;
-import cs314_A3.LevelOneAdventureFactory;
 
 
 public class AdventureActivity extends Activity {
@@ -27,12 +26,10 @@ public class AdventureActivity extends Activity {
         setContentView(R.layout.main);
 
         //initialize connection to model and set inital view
-
         model = new AdventureGameModelFacade();
-
-
         TextView myView = (TextView) findViewById(R.id.roomView);
-        myView.setText("\nExplore the cave system and see what you can find.\nDon't get lost! \n\n"
+        String myViewStr = model.getView();
+        myView.setText("Explore the cave system and see what you can find.\nDon't get lost! \n\n"
                             + model.getView());
     }
 
@@ -67,6 +64,8 @@ public class AdventureActivity extends Activity {
             case R.id.grab:
                 actionResult = grab();
                 break;
+            case R.id.exit:
+                System.exit(0);
         }
         displayCurrentInfo(actionResult);
     }
@@ -75,7 +74,7 @@ public class AdventureActivity extends Activity {
     // updates info displayed in GUI any time a button is pushed
     private void displayCurrentInfo(String result){
         TextView myView = (TextView) findViewById(R.id.roomView);
-        String myViewStr = "\n" + model.getView() + "\n\n" + result;
+        String myViewStr = model.getView() + "\n\n" + result;
         if(!model.roomEmpty()) myViewStr = myViewStr + "\nThe room contains";
         myView.setText(myViewStr);
 
