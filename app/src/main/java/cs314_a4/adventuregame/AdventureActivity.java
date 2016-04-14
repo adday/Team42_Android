@@ -64,8 +64,6 @@ public class AdventureActivity extends Activity {
             case R.id.grab:
                 actionResult = grab();
                 break;
-            case R.id.exit:
-                System.exit(0);
         }
         displayCurrentInfo(actionResult);
     }
