@@ -26,9 +26,9 @@ public class AdventureGameModelFacade {
 
   private AdventureFactory getAdventureFactory() {
     if(level == 0)
-        return new LevelOneAdventureFactory();
+        return new LevelZeroAdventureFactory();
     else
-        return new LevelTwoAdventureFactory();
+        return new LevelOneAdventureFactory();
   }
 
   public boolean levelComplete(){
@@ -41,9 +41,7 @@ public class AdventureGameModelFacade {
 
   //ALL 'go' methods simply use numbers corresponding to directions in original code
   //contained in AdventureGame.java
-  public String goUp(){
-	  return thePlayer.go(4);
-  }
+  public String goUp(){return thePlayer.go(4);}
 
   public String goDown(){
 	  return thePlayer.go(5);
