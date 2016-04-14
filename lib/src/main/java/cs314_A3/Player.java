@@ -47,7 +47,7 @@ public class Player {
 
 	private int itemCount = 0;
 
-	private HashMap<String,Integer> stateHolder = new HashMap<>();
+	//private HashMap<String,Integer> stateHolder = new HashMap<>();
 
 	/* Method for functionality, not something the player directly activates
    For when the player changes rooms*/
@@ -149,7 +149,7 @@ public class Player {
 	public int numItemsCarried(){return itemCount;}
 
 	//Returns hashmap containing state of game
-	public HashMap<String,Integer> getGameState(){return stateHolder;}
+	//public HashMap<String,Integer> getGameState(){return stateHolder;}
 
 	//get player's room number
 	public int getPlayerRoomNum(){return playerRoomNum;}
