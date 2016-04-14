@@ -113,5 +113,7 @@ public class Room implements CaveSite {
 	//set room number when constructing the adventure
 	public void setRoomNum(int num){roomNum = num;}
 
+	public int getRoomNum(){return roomNum;}
+
 }
 
