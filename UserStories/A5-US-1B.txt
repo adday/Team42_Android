@@ -1,31 +1,32 @@
-User Story 1 (10 PTS): As a game player, I want an improved GUI for the Adventure game,
-                so that I can play the game on an Android device.
-
+User Story 1 (8PTS): As a game player, I want to be able to choose a level of difficulty for
+                    Adventure game, so that the game is more challenging.
     @Acceptance Criteria:
-        -The game works on an Android device emulation, or an actual Android device.
-          All commands available in previous versions of the game are accessible and work properly
-          on the Android device.
+        -The game has at least 2 levels of difficulty: Level 0, the version from prior assignments,
+            and Level 1, a new level with additional properties and behaviors.
+        -Difficulty level is reflected in at least Rooms and Items.
+        -The game doesn't crash or fail, and all commands work properly with each of the different
+            levels of difficulty.
 
-
-Split Story B (2 PTS): As a CS 314 student, I want to evaluate my Android GUI with respect to usability,
-                  so that I can provide evidence and rationale for subsequent GUI design changes.
+Split story 1-B (3PTS): As a CS 314 student, I want to add entities and behaviors for at least Level 1
+                so that there actually are differences between Level 0 and Level 1.
     @Acceptance Criteria (AC):
-        - Two usability goals are evaluated:
-            (a) Efficiency of the user interacting with the user interface to complete a task.
-                A typical task related to efficiency might be to explore all rooms. Another task related to
-                efficiency might be to find treasure ("gold bars" for example) and bring it out of the cave.
-            (b) Effectiveness of the user interface in causing the program to follow the user's intent.
-                A typical task related to effectiveness might be to go in a desired direction. Another
-                task related to effectiveness might be to pick up and/or drop the desired items.
-        - Two questions based on specific user tasks are created for each of the 2 usability goals.
-        - Answering all 4 questions generates data that can drive design changes in the GUI, and that can provide rationale for design improvement. No question can be answered with a simple "yes" or "no" answer.
-        - Meet 'Definition of Done' (DoD), below.
+        -The game supports at least 2 new entities and 2 new behaviors for Level 1.
+        -A description of the other enhancements that your team has made to the Adventure Game is created.
+        -UML class diagram(s) of new/changed entities and behaviors are created.
+        -If you change the configuration/layout of the cave labyrinth, you must submit a UML object
+            diagram (that is, a map) of the new configuration.
+        -New tests are written for the new entities and behaviors and pass. Any defects they find are fixed.
+        -All previous tests run and pass.
+        -Meet 'Definition of Done' (DoD), below.
 
-    @Tasks (estimation/actual time):
-            who*(2hrs/1.5hrs) Think up 4 questions that would produce fruitful answers
-            who*(2hrs/1hr) Answer Questions / Use application
-            who*(1hr/1hr) Type up results in 'overview.txt'
-            who*(1hr/1hr) Ensure that DoD and rubric are both met
+    @Tasks who*(estimation/actual time):
+        ed/all*(2hrs/hrs) Think up entities & behaviors that would produce different difficulties
+        ed*(2hrs/hr) implement decided changes to levels
+        all*(1.5hrs/hrs) Write tests for new level implementation
+        all*(1hr/hr) Fix bugs introduced by tests
+        all*(2hr/hr) Make UML diagrams of entities and new map if needed
+        ed*(1hr/hr) Add description of changes to overview.txt file
+        all*(1hr/hr) Ensure that DoD and rubric are both met
 
 
 ---------------------------------------------------------------
@@ -44,4 +45,4 @@ For CS314 development:
     - Commit messages include user story and task
     - All user stories and point estimates are in GitHub
     - All tasks and time estimates and actual time taken are in GitHub
-    - The overview.txt file for A4 has all required items in it
+    - The overview.txt file for A5 has all required items in it

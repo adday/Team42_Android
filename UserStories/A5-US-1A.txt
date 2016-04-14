@@ -1,31 +1,33 @@
-User Story 1 (10 PTS): As a game player, I want an improved GUI for the Adventure game,
-                so that I can play the game on an Android device.
-
+User Story 1 (8PTS): As a game player, I want to be able to choose a level of difficulty for
+                    Adventure game, so that the game is more challenging.
     @Acceptance Criteria:
-        -The game works on an Android device emulation, or an actual Android device.
-          All commands available in previous versions of the game are accessible and work properly
-          on the Android device.
+        -The game has at least 2 levels of difficulty: Level 0, the version from prior assignments,
+            and Level 1, a new level with additional properties and behaviors.
+        -Difficulty level is reflected in at least Rooms and Items.
+        -The game doesn't crash or fail, and all commands work properly with each of the different
+            levels of difficulty.
 
-
-Split Story A (8 PTS): As a CS 314 student, I want to create a new GUI as a new game view,
-                  so that the game will run on an Android device. (See the Notes in the Description section
-                  below for additional information you need to deliver the acceptance criteria listed below.)
+Split story 1-A (5PTS): As a CS 314 student, I want to refactor the game to use the Abstract Factory design
+                pattern so that I can use factories to create at least 2 difficulty levels.
     @Acceptance Criteria (AC):
-        - The new interface works on the Android platform.
-        - The game retains its Model-View separation design: All 'view' software only accesses functional
-            parts of the game through the AdventureGameModelFacade class.
-        - New tests for your Android Java code are written and pass. Any defects they find are fixed.
-        - All previous JUnit tests are run and pass.
-        - Meet 'Definition of Done' (DoD), below.
+        -The cave creation mechanism uses the Abstract Factory pattern.
+        -The abstract factory supports at least 2 levels: Level 0 is the version from prior
+            assignments, and Level 1 has additional properties and behaviors.
+        -A description of the mechanism that you used to support "levels of difficulty" is created.
+        -The User Interfaces and Facade are adapted to allow users to select the level of difficulty.
+        -The User Interfaces work either on Android or on Java (i.e. Swing).
+        -UML class diagram(s) of your AdventureGame Model Java code that is involved in your
+            implementation of the Abstract Factory Pattern are created.
+        -New tests are written and pass. Any defects they find are fixed.
+        -All previous tests run and pass.
+        -Meet 'Definition of Done' (DoD), below.
 
-    @Tasks (estimation/actual time):
-        who*(1hr/.5hr) Download and install Android Studio
-        who*(4hrs/4hrs) Learn how to use Android Studio
-        who*(2hrs/2.5hrs) Build project and get Github to work with Android Studio
-        who*(3hrs/3hrs) Add button functionality
-        who*(2hrs/1hr) Test application
-        who*(.5hr/.5hr) Document Work
-        who*(1hr/1hr) Ensure that DoD and rubric are both met
+    @Tasks who*(estimation/actual time):
+        all*(1hr/hr) Understanding Abstract Factory Design
+        alex*(4hrs/hrs) Implement Abstract Factory Design
+        all*(1.5hrs/hrs) Write tests for new abstract factory implementation
+        all*(1hr/hr) Fix bugs introduced by tests
+        all*(1hr/hr) Ensure that DoD and rubric are both met
 
 
 
@@ -46,4 +48,4 @@ For CS314 development:
     - Commit messages include user story and task
     - All user stories and point estimates are in GitHub
     - All tasks and time estimates and actual time taken are in GitHub
-    - The overview.txt file for A4 has all required items in it
+    - The overview.txt file for A5 has all required items in it

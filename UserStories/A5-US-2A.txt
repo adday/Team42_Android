@@ -1,0 +1,53 @@
+User Story 2 (5PTS): As a game player, I want to be able to save and restore a game state, so that
+                I don't have to play the entire game at once.
+    @Acceptance Criteria:
+        -The game can be stopped and later restarted.
+        -The game doesn't crash or fail, it can be stopped at any time, and it always
+            restarts exactly where it should.
+
+Split story 2-A (5PTS): As a CS 314 student, I want to add save and restore game state to the
+            cave creation so that the game supports this function.
+
+    @Acceptance Criteria (AC):
+        -Complete game state can be saved at any time.
+        -Game restoration occurs properly - all necessary state is restored.
+        -Game play resumes properly after a restoration.
+        -A description of the mechanism used to configure a cave configuration from a file and to
+            save and retrieve games is created.
+        -New tests are written for game saving, restoration, and continued play and pass. Any
+            defects they find are fixed.
+        -All previous tests are run and pass.
+        -Meet 'Definition of Done' (DoD), below.
+
+
+    @Tasks who*(estimation/actual time):
+        adrion*(1hr/hr) Decide how best to save, and what is needed
+        adrion*(3hrs/hrs) Implement saving and restoring methods
+        adrion*(2hrs/hrs) Added save/load features to GUI and connect to underlying methods
+        all*(1.5hrs/hrs) Write tests for new level implementation
+        all*(1hr/hr) Fix bugs introduced by tests
+        adrion*(1hr/hr) Add description of save/load mechanism to overview.txt file
+        all*(1hr/hr) Ensure that DoD and rubric are both met
+
+
+
+
+
+
+---------------------------------------------------------------
+@ Definition of Done:
+For all user stories:
+
+    - GitHub main branch code runs with no warnings and a user can execute all commands at least using the GUI.
+    - All code changes are reviewed before being merged onto the main branch (see A1, tutorial 5
+        for instructions on the GitHub Pull Request Code Review System you must use for reviews)
+    - All code changes are merged into the main branch
+
+For CS314 development:
+
+    - All work is done on individual branches with frequent commits and pushes to GitHub
+        before being merged onto the main branch.
+    - Commit messages include user story and task
+    - All user stories and point estimates are in GitHub
+    - All tasks and time estimates and actual time taken are in GitHub
+    - The overview.txt file for A5 has all required items in it
