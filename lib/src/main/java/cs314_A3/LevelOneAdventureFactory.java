@@ -1,60 +1,18 @@
 package cs314_A3;
 
-/**  Adventure Game  Program Code
-     Copyright (c) 1999 James M. Bieman
-     filename: Adventure.java
-     Authors:
-     	Adrion Q Arkenberg
-     	Alex Day
-     	Ed Okvath
-**/
+/**
+ */
 
-/**  Adventure Game  Program Code
-Copyright (c) 1999-2012 James M. Bieman
-The Adventure game is based on the "Colossal Cave Adventure" originally
-designed by Will Crowther and implemented by Will Crowther
-and Don Wood in Fortran in 1975 and 1976.
-
-This micro-version is a variant of the original cave system and is implemented in Java
-with just a few rooms and with a much more limited vocabulary.
-
--------UPDATES--------
-Updated August 2010, January 2012
-- Code is put into package cs314.a2 to match current CS314 coding standards.
-Updated January 2012
-- Renamed as the "Adventure Game"
-Updated Jan 2016 - gg
-- took out comments on how to compile and run
-Updated Feb 2016 -- Adrion Q Arkenberg
-- updated compile/run instructions with correct package cs314_A1
-- added filename to top of file
-
-The main routine is AdventureGame.main
-			    
-			    **/
-
-/** class Adventure: Primary method, createCave, creates the cave system.
-        It eventually be replaced with a more flexible mechanism
-        to support input and output from devices other than
-        an ASCII terminal.
-
-		Room descriptions are followed by a room identifier,
-		to ease debugging and testing.  These would be removed
-		to help confuse the user, which is our ultimate aim.
-*/
-
-public class Adventure {
-
-  private Room entrance;
-  
-  public Room createAdventure(){
-    // The outside: 
+public class LevelOneAdventureFactory implements AdventureFactory {
+    @Override
+    public Room createAdventure() {
+      // The outside:
       Room  outside = new Room();
       outside.setDesc(
         "You are standing outside, on the edge of a cliff;\n" +
-	"A creek runs alongside the cliff.\n" + 
+	"A creek runs alongside the cliff.\n" +
 	"a cave opens straight down (outside).");
-   
+
    // Room 1:
       Room r1 = new Room();
       r1.setDesc(
@@ -64,12 +22,11 @@ public class Adventure {
    // Connect the outside to Room 1:
       outside.setSide(5,r1);
       r1.setSide(4,outside);
-      entrance = outside;
 
    // Room 2:
       Room r2 = new Room();
       r2.setDesc(
-	"You are in a gloomy oval shaped room with grey walls.\n" + 
+	"You are in a gloomy oval shaped room with grey walls.\n" +
 	 "There is a dim light to the west, and a narrow\n" +
 	 "dark hole to the east only about 18 inches high (r2).");
 
@@ -158,15 +115,13 @@ public class Adventure {
     theKey.setDesc("A shiny gold key.");
     r6.addItem(theKey);
 
- // We add a door between r10 and r11: 
+ // We add a door between r10 and r11:
     Door theDoor = new Door(r10,r11,theKey);
     r10.setSide(5,theDoor);
     r11.setSide(4,theDoor);
 
  // Now return the entrance:
-    entrance = outside;
-    return entrance;
+    return outside;
+    }
 
-  }
 }
-
