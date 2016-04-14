@@ -3,6 +3,7 @@ package cs314_A3;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Random;
 
 /**  Adventure Game  Program Code
      Copyright (c) 1999 James M. Bieman
@@ -46,6 +47,13 @@ public class Player {
 	private Item[] myThings = new Item[2];
 
 	private int itemCount = 0;
+
+    private int health = 100;
+
+    // How much damage the player does to enemies per attack
+    private int damage = 20;
+
+    private int accuracy=70;
 
 	//private HashMap<String,Integer> stateHolder = new HashMap<>();
 
@@ -153,6 +161,34 @@ public class Player {
 
 	//get player's room number
 	public int getPlayerRoomNum(){return playerRoomNum;}
+
+    public int getHealth(){
+        return health;
+    }
+
+    public void setHealth(int h){
+        health = h;
+    }
+
+    public String attack(Enemy enemy){
+
+        Random rng = new Random();
+
+        int hitOrMiss = rng.nextInt(100) + 1;
+
+        // When the player attacks they have a chance at missing if the hitOrMiss variable is less than accuracy
+        // This if statement should make it so the player hits accuracy% of the time.If it is a hit the health of the enemy
+        // is reduced by the damage the player deals
+
+        if(hitOrMiss <= accuracy){
+            enemy.setHealth(enemy.getHealth() - damage);
+
+            return "Hit " + enemy.getName() + " for " + damage + " damage\n";
+        }
+
+        return "Attack missed\n";
+
+    }
 
 }
 
