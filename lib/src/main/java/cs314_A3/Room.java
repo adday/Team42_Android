@@ -36,6 +36,8 @@ public class Room implements CaveSite {
 
 	private String description;
 
+	private int roomNum = -1;
+
 	private CaveSite[] side = new CaveSite[6];
 
 	private ArrayList<Item> contents = new ArrayList<Item>();
@@ -92,7 +94,7 @@ public class Room implements CaveSite {
 
 	// for setting the location of the Player in the Room like when they enter it
 	public String enter(Player p) {
-		p.setRoom(this); 
+		p.setRoom(this);
 		return "";
 	}
 
@@ -107,6 +109,9 @@ public class Room implements CaveSite {
 	public String getDesc(){
 		return description;
 	}
+
+	//set room number when constructing the adventure
+	public void setRoomNum(int num){roomNum = num;}
 
 }
 
