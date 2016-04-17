@@ -42,7 +42,11 @@ or treasure. Players can also get stuck if they play the level incorrectly.
 
 @Abstract Factory design implementation:
 ------------------------------------------------
-
+The abstract factory is implemented to create a cave configuration depending on a user selected level
+of 0 or 1. Each adventure factory defines a cave layout and places items in the rooms according to the
+programmer design. The factories also have a method that creates a saved adventure so that when a
+user selects to load a saved adventure the cave is configured appropriately. The factory to use is
+determined in the adventure game model facade.
 
 @Description of other Game Enhancements:
 ------------------------------------------------
