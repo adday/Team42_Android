@@ -223,8 +223,7 @@ public class AdventureGameModelFacade {
     }
 
     // If the player does have a FlashLight, call checkRoom and return that list, if not then return an empty list
-    if(hasFlashLight){
-    return f.checkRoom(thePlayer.getLoc());}
+    if(hasFlashLight){return f.checkRoom(thePlayer.getLoc());}
 
     return new ArrayList<Integer>();
 
