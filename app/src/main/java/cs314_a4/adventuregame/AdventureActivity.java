@@ -2,9 +2,13 @@ package cs314_a4.adventuregame;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -114,6 +118,7 @@ public class AdventureActivity extends Activity {
 
         updateRoomItems();
         updateUserItems();
+        useFlashLight();
     }
 
     // updates room items comboBox to reflect what's currently in the room
@@ -165,6 +170,96 @@ public class AdventureActivity extends Activity {
         if(model.getPlayerNumOfItemsCarried() == 0) return "You have no items to drop.";
         else if(itemNum < 0) return "Select an item to drop.";
         else return model.dropItem(itemNum + 1);
+    }
+
+    private void useFlashLight(){
+        ArrayList<Integer> ableToGoDir = model.useFlashLight();
+
+        for(int i = 0; i < 6; i++){
+            if(ableToGoDir.size() == 0) {
+                setButtonColor(i, 3);
+            }else
+                setButtonColor(i, ableToGoDir.get(i));
+
+        }
+
+    }
+
+    private void setButtonColor(int i, int colorIndicator){
+        switch(i) {
+            case 0:
+                Button north = (Button) findViewById(R.id.goNorth);
+                if (colorIndicator == 0) {
+                    north.setTextColor(getResources().getColor(R.color.colorWall));
+                } else if (colorIndicator == 1) {
+                    north.setTextColor(getResources().getColor(R.color.colorRoom));
+                } else if (colorIndicator == 2) {
+                    north.setTextColor(getResources().getColor(R.color.colorDoor));
+                }else if(colorIndicator == 3){
+                    north.setTextColor(getResources().getColor(R.color.colorDefault));
+                }
+                break;
+            case 1:
+                Button south = (Button) findViewById(R.id.goSouth);
+                if (colorIndicator == 0) {
+                    south.setTextColor(getResources().getColor(R.color.colorWall));
+                } else if (colorIndicator == 1) {
+                    south.setTextColor(getResources().getColor(R.color.colorRoom));
+                } else if (colorIndicator == 2) {
+                    south.setTextColor(getResources().getColor(R.color.colorDoor));
+                }else if(colorIndicator == 3){
+                    south.setTextColor(getResources().getColor(R.color.colorDefault));
+                }
+                break;
+            case 2:
+                Button east = (Button) findViewById(R.id.goEast);
+                if (colorIndicator == 0) {
+                    east.setTextColor(getResources().getColor(R.color.colorWall));
+                } else if (colorIndicator == 1) {
+                    east.setTextColor(getResources().getColor(R.color.colorRoom));
+                } else if (colorIndicator == 2) {
+                    east.setTextColor(getResources().getColor(R.color.colorDoor));
+                }else if(colorIndicator == 3){
+                    east.setTextColor(getResources().getColor(R.color.colorDefault));
+                }
+                break;
+            case 3:
+                Button west = (Button) findViewById(R.id.goWest);
+                if (colorIndicator == 0) {
+                    west.setTextColor(getResources().getColor(R.color.colorWall));
+                } else if (colorIndicator == 1) {
+                    west.setTextColor(getResources().getColor(R.color.colorRoom));
+                } else if (colorIndicator == 2) {
+                    west.setTextColor(getResources().getColor(R.color.colorDoor));
+                }else if(colorIndicator == 3){
+                    west.setTextColor(getResources().getColor(R.color.colorDefault));
+                }
+                break;
+            case 4:
+                Button up = (Button) findViewById(R.id.goUp);
+                if (colorIndicator == 0) {
+                    up.setTextColor(getResources().getColor(R.color.colorWall));
+                } else if (colorIndicator == 1) {
+                    up.setTextColor(getResources().getColor(R.color.colorRoom));
+                } else if (colorIndicator == 2) {
+                    up.setTextColor(getResources().getColor(R.color.colorDoor));
+                }else if(colorIndicator == 3){
+                    up.setTextColor(getResources().getColor(R.color.colorDefault));
+                }
+                break;
+            case 5:
+                Button down = (Button) findViewById(R.id.goDown);
+                if (colorIndicator == 0) {
+                    down.setTextColor(getResources().getColor(R.color.colorWall));
+                } else if (colorIndicator == 1) {
+                    down.setTextColor(getResources().getColor(R.color.colorRoom));
+                } else if (colorIndicator == 2) {
+                    down.setTextColor(getResources().getColor(R.color.colorDoor));
+                }else if(colorIndicator == 3){
+                    down.setTextColor(getResources().getColor(R.color.colorDefault));
+                }
+                break;
+        }
     }
 
     //fxn to save game state in internal storage
