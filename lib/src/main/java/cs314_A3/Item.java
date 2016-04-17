@@ -29,6 +29,9 @@ public class Item {
 
 	private int currRoom = -2;
 
+	private int itemId;
+
+	//desc setters and getters
 	public void setDesc(String d){
 		description = d;
 	}
@@ -37,6 +40,12 @@ public class Item {
 		return description;
 	}
 
+	//item id setters and getters
+	public void setItemId(int id) { itemId = id;}
+
+	public int getItemId(){ return itemId;}
+
+	//room# setters and getters
 	public int getCurrRoom(){return currRoom;}
 
 	public void setCurrRoom(int roomNum){

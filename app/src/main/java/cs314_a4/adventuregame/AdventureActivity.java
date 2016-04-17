@@ -1,11 +1,16 @@
 package cs314_a4.adventuregame;
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import cs314_A3.AdventureGameModelFacade;
@@ -22,6 +27,12 @@ public class AdventureActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start);
+    }
+
+    @Override
+    public void onDestroy() {
+        saveGame2();
+        super.onDestroy();
     }
 
 
@@ -152,7 +163,56 @@ public class AdventureActivity extends Activity {
         int itemNum = userItemsList.getCheckedItemPosition();
         if(model.getPlayerNumOfItemsCarried() == 0) return "You have no items to drop.";
         else if(itemNum < 0) return "Select an item to drop.";
-        else return model.dropItem(itemNum+1);
+        else return model.dropItem(itemNum + 1);
+    }
+
+    //fxn to save game state in internal storage
+    //stores: lvl#, playerRoom#, & (item0 - itemN)room#
+    public void saveGame(View view){
+        String filename = "adventureSave.txt";
+        String lvl = "level";
+        String plyr = "player";
+        String
+        //open file stream
+        try {
+            FileOutputStream outStream = openFileOutput(filename, MODE_PRIVATE);
+            outStream.write(model.getLevel()); //write level out
+        } catch(FileNotFoundException e){
+            e.printStackTrace();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void saveGame2(){
+        //get data to save
+        int gameLvl = model.getLevel();
+        int playerRoom = model.getPlayerRoomNum();
+        //open sharedPref
+        SharedPreferences saveFile = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = saveFile.edit(); //create preferences editor
+        //store level
+        editor.putInt(getString(R.string.lvl), gameLvl);
+        //store player room
+        editor.putInt(getString(R.string.player), playerRoom);
+        editor.commit();
+
+    }
+
+    public ArrayList<Integer> loadGame2(){
+        ArrayList<Integer> settingsList = new ArrayList<Integer>()
+        //open shared preferences
+        SharedPreferences loadFile = getActivity().getPreferences(Context.MODE_PRIVATE);
+        //get lvl and playerRoom#, default to beginning of lvl0
+        int gameLvl = loadFile.getInt(getString(R.string.lvl), 0);
+        int playerRoom = loadFile.getInt(getString(R.string.player), 0);
+        //add info to settings list
+        settingsList.add(gameLvl);
+        settingsList.add(playerRoom);
+        //add item info to settings list
+
+
+        return settingsList;
     }
 
 }
