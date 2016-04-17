@@ -10,6 +10,7 @@ public class LevelZeroAdventureFactory implements AdventureFactory {
     public Room createAdventure() {
       // The outside:
       Room  outside = new Room();
+      outside.setRoomNum(0);
       outside.setDesc(
         "You are standing outside, on the edge of a cliff;\n"
 	    + "A creek runs alongside the cliff.\n"
@@ -17,12 +18,14 @@ public class LevelZeroAdventureFactory implements AdventureFactory {
 
    // Room 1:
       Room r1 = new Room();
+      r1.setRoomNum(1);
       r1.setDesc(
               "The darkness is pierced by a bright light overhead.\n"
                       + "There is a narrow, dark passage to the east (r1).");
 
    // Room 2:
       Room r2 = new Room();
+      r2.setRoomNum(2);
       r2.setDesc(
 	"You are in a gloomy oval shaped room with grey walls.\n" +
 	 "There is a dim light to the west, and a narrow\n" +
@@ -30,6 +33,7 @@ public class LevelZeroAdventureFactory implements AdventureFactory {
 
   // Room 3:
      Room r3 = new Room();
+     r3.setRoomNum(3);
      r3.setDesc("You really need your flashlight here.\n"+
 		"There is a wide passage that quickly narrows\n"
 		+"to the west, a bright opening to the east,\n"
@@ -38,6 +42,7 @@ public class LevelZeroAdventureFactory implements AdventureFactory {
 
         // Room 4:
         Room r4 = new Room();
+        r4.setRoomNum(4);
         r4.setDesc("There is what looks like a giant grizzly bear\n"
                 + "skull in a corner.  A passage leads to the west,\n"
                 + "another one to the north, and a slippery route\n"
@@ -45,31 +50,37 @@ public class LevelZeroAdventureFactory implements AdventureFactory {
 
         // Room 5:
         Room r5 = new Room();
+        r5.setRoomNum(5);
         r5.setDesc("There is a dim light from above and the shrieks\n"
                 + "are clearly coming from a passageway to the east (r5).");
 
         // Room 6:
         Room r6 = new Room();
+        r6.setRoomNum(6);
         r6.setDesc("The ceiling is full of bats.\n"
                 + "You should put your hat on your head (r6).");
 
         // Room 7:
         Room r7 = new Room();
+        r7.setRoomNum(7);
         r7.setDesc("This room is very damp. There are puddles on the floor\n" +
                 "and a steady dripping from above (r7).");
         // Room 8:
         Room r8 = new Room();
+        r8.setRoomNum(8);
         r8.setDesc("A lizard scampers past you, or is it a snake?\n" +
                 "a narrow passage runs to the east and an even narrower one\n" +
                 "runs to the west (r8).");
 
         // Room 9:
         Room r9 = new Room();
+        r9.setRoomNum(9);
         r9.setDesc("It looks pretty boring here.\n"
                 + "There is a narrow passage to the east\n (r9)");
 
         // Room 10:
         Room r10 = new Room();
+        r10.setRoomNum(10);
         r10.setDesc("It looks like someone has been here.\n" +
                 "There is a pile of candy wrappers on the floor,\n" +
                 "and maybe something else. \n" +
@@ -77,6 +88,7 @@ public class LevelZeroAdventureFactory implements AdventureFactory {
                 "but it is locked (r10).");
         // Room 11:
         Room r11 = new Room();
+        r11.setRoomNum(11);
         r11.setDesc("This room is very dark. You can just barely see (r11).");
 
      outside.setSide(5,r1);

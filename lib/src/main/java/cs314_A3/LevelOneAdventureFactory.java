@@ -11,7 +11,7 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         // The outside:
         Room  outside = new Room();
-
+        outside.setRoomNum(0);
         outside.setDesc(
                 "You are standing outside in quiet, snowy mountains;\n" +
                         "A large boulder obscures a passage to the east.\n" +
@@ -19,6 +19,7 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         // Room 1:
         Room r1 = new Room();
+        r1.setRoomNum(1);
         r1.setDesc(
                 "It is much warmer in here out of the snow.\n"
                         + "The cave is barely high enough to stand. "
@@ -26,6 +27,7 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         // Room 2:
         Room r2 = new Room();
+        r2.setRoomNum(2);
         r2.setDesc(
                 "It is very damp down here and there are markings\n" +
                         "on the wall. There is a large opening to the west,\n" +
@@ -34,12 +36,14 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         // Room 3:
         Room r3 = new Room();
+        r3.setRoomNum(3);
         r3.setDesc("Ice has formed on the walls and it is very chilly.\n"
                 +"To the east looks like the only way out of here.\n"
                 + "It appears someone took refuge here recently. (r3)");
 
         // Room 4:
         Room r4 = new Room();
+        r4.setRoomNum(4);
         r4.setDesc("The tunnel narrows and you are forced to crawl.\n"
                 + "It continues to the east, but is very damp.\n"
                 + "Another room opens to the north. You can see a small\n"
@@ -47,39 +51,46 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         // Room 5:
         Room r5 = new Room();
+        r5.setRoomNum(5);
         r5.setDesc("There is a locked door to the north. Someone has \n"
                 + "carved their name into it, 'Karl'. Looks like there\n "
                 + "is another cave explorer around. (r5)");
 
         // Room 6:
         Room r6 = new Room();
+        r6.setRoomNum(6);
         r6.setDesc("Light shines in from outside from an opening above.\n"
                 + "Unfortunately there is no way to get up there."
                 + "Sounds are coming from the east. (r6)");
 
         // Room 7:
         Room r7 = new Room();
+        r7.setRoomNum(7);
         r7.setDesc("It is pitch black.");
 
         // Room 8:
         Room r8 = new Room();
+        r8.setRoomNum(8);
         r8.setDesc("It looks like someone has been camping in here. " +
                 "A wide opening descends below, scrambling is the only way down. \n" +
                 "The room to the west looks is very dark.(r8)");
 
         // Room 9:
         Room r9 = new Room();
+        r9.setRoomNum(9);
         r9.setDesc("It looks like a small rodent has made a home in the corner.\n"
                 + "There is a narrow passage to the east covered by spider webs. (r9)");
 
         // Room 10:
         Room r10 = new Room();
+        r10.setRoomNum(10);
         r10.setDesc("It doesn't look like people have been through here.\n" +
                 "Wait, there is a small trap door on the ceiling,\n" +
                 "but it is locked. (r10)");
 
         // Room 11:
         Room r11 = new Room();
+        r11.setRoomNum(11);
         r11.setDesc("This room is very bright as there is an opening to the side" +
                 "of the mountain. There is writing on the wall, 'BEWARE!'." +
                 "It looks like someone has hidden something in the corner. (r11).");
