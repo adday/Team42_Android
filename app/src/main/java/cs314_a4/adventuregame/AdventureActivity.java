@@ -175,6 +175,8 @@ public class AdventureActivity extends Activity {
     private void useFlashLight(){
         ArrayList<Integer> ableToGoDir = model.useFlashLight();
 
+        // Checks if the player has the flashlight, if they do the direction button text colors will be set
+        // colors that indicate if the direction has wall, opening or door.
         for(int i = 0; i < 6; i++){
             if(ableToGoDir.size() == 0) {
                 setButtonColor(i, 3);
