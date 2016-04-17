@@ -23,11 +23,12 @@ Split story 1-A (5PTS): As a CS 314 student, I want to refactor the game to use 
         -Meet 'Definition of Done' (DoD), below.
 
     @Tasks who*(estimation/actual time):
-        all*(1hr/hr) Understanding Abstract Factory Design
-        alex*(4hrs/hrs) Implement Abstract Factory Design
+        all*(1hr/1hr) Understanding Abstract Factory Design
+        alex*(4hrs/3hrs) Implement Abstract Factory Design
         all*(1.5hrs/hrs) Write tests for new abstract factory implementation
         all*(1hr/hr) Fix bugs introduced by tests
-        all*(1hr/hr) Ensure that DoD and rubric are both met
+        alex*(1hr/1hr) Add Abstract Factory description to overview.txt file
+        all*(1hr/.5hr) Ensure that DoD and rubric are both met
 
 
 

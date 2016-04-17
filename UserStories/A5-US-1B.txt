@@ -20,13 +20,13 @@ Split story 1-B (3PTS): As a CS 314 student, I want to add entities and behavior
         -Meet 'Definition of Done' (DoD), below.
 
     @Tasks who*(estimation/actual time):
-        ed/all*(2hrs/hrs) Think up entities & behaviors that would produce different difficulties
-        ed*(2hrs/hr) implement decided changes to levels
+        ed/all*(2hrs/2hrs) Think up entities & behaviors that would produce different difficulties
+        ed*(2hrs/2hr) implement decided changes to levels
         all*(1.5hrs/hrs) Write tests for new level implementation
         all*(1hr/hr) Fix bugs introduced by tests
         all*(2hr/hr) Make UML diagrams of entities and new map if needed
-        ed*(1hr/hr) Add description of changes to overview.txt file
-        all*(1hr/hr) Ensure that DoD and rubric are both met
+        ed*(1hr/1hr) Add description of changes to overview.txt file
+        all*(1hr/.5hr) Ensure that DoD and rubric are both met
 
 
 ---------------------------------------------------------------
