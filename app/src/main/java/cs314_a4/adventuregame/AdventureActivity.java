@@ -172,7 +172,6 @@ public class AdventureActivity extends Activity {
         String filename = "adventureSave.txt";
         String lvl = "level";
         String plyr = "player";
-        String
         //open file stream
         try {
             FileOutputStream outStream = openFileOutput(filename, MODE_PRIVATE);
@@ -189,7 +188,7 @@ public class AdventureActivity extends Activity {
         int gameLvl = model.getLevel();
         int playerRoom = model.getPlayerRoomNum();
         //open sharedPref
-        SharedPreferences saveFile = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences saveFile = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = saveFile.edit(); //create preferences editor
         //store level
         editor.putInt(getString(R.string.lvl), gameLvl);
@@ -200,9 +199,9 @@ public class AdventureActivity extends Activity {
     }
 
     public ArrayList<Integer> loadGame2(){
-        ArrayList<Integer> settingsList = new ArrayList<Integer>()
+        ArrayList<Integer> settingsList = new ArrayList<Integer>();
         //open shared preferences
-        SharedPreferences loadFile = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences loadFile = this.getPreferences(Context.MODE_PRIVATE);
         //get lvl and playerRoom#, default to beginning of lvl0
         int gameLvl = loadFile.getInt(getString(R.string.lvl), 0);
         int playerRoom = loadFile.getInt(getString(R.string.player), 0);
