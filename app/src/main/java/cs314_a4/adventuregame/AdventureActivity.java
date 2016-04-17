@@ -35,7 +35,7 @@ public class AdventureActivity extends Activity {
 
     @Override
     public void onDestroy() {
-        saveGame2();
+        saveGame();
         super.onDestroy();
     }
 
@@ -264,7 +264,7 @@ public class AdventureActivity extends Activity {
 
 //    //fxn to save game state in internal storage
 //    //stores: lvl#, playerRoom#, & (item0 - itemN)room#
-//    public void saveGame(View view){
+//    public void saveGame1(View view){
 //        String filename = "adventureSave.txt";
 //        String lvl = "level";
 //        String plyr = "player";
@@ -279,7 +279,7 @@ public class AdventureActivity extends Activity {
 //        }
 //    }
 
-    public void saveGame2(){
+    public void saveGame(){
         //get data to save
         int gameLvl = model.getLevel();
         int playerRoom = model.getPlayerRoomNum();
