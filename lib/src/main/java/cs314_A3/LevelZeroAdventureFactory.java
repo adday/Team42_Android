@@ -115,6 +115,7 @@ public class LevelZeroAdventureFactory implements AdventureFactory {
 
  // Create a key and put it in r6:
     Key theKey = new Key();
+    theKey.setItemId(0); //set item id for saveList
     theKey.setDesc("A shiny gold key.");
     r6.addItem(theKey);
 
@@ -125,6 +126,7 @@ public class LevelZeroAdventureFactory implements AdventureFactory {
 
     // Now return the entrance:
         Treasure theTreasure = new Treasure();
+        theTreasure.setItemId(1); //set item id for saveList
         theTreasure.setDesc("A bag filled with gold bars.");
         r11.addItem(theTreasure);
         winningItem = theTreasure;

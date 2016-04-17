@@ -119,6 +119,7 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         // setup the wrong key and wrong door
         Key theWrongKey = new Key();
+        theWrongKey.setItemId(1);//set item id for saveList
         theWrongKey.setDesc("An old rusty key.");
         r3.addItem(theWrongKey);
 
@@ -129,6 +130,7 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         // create the key and door that hold the winning item
         Key theKey = new Key();
+        theKey.setItemId(0);//set item id for saveList
         theKey.setDesc("A shiny gold key.");
         r5.addItem(theKey);
         r2.setSide(2,r4);
@@ -139,6 +141,7 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         // create the winning item
         Treasure theTreasure = new Treasure();
+        theTreasure.setItemId(3);//set item id for saveList
         theTreasure.setDesc("Karl's forgotten gold.");
         r11.addItem(theTreasure);
         winningItem = theTreasure;
