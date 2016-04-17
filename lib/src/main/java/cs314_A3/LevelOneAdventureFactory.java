@@ -9,10 +9,9 @@ public class LevelOneAdventureFactory implements AdventureFactory{
     @Override
     public Room createAdventure() {
 
-        //THIS IS CURRENTLY LEVEL ONE- NEEDS TO BE CHANGED
-
         // The outside:
         Room  outside = new Room();
+
         outside.setDesc(
                 "You are standing outside in quiet, snowy mountains;\n" +
                         "A large boulder obscures a passage to the east.\n" +
@@ -22,19 +21,15 @@ public class LevelOneAdventureFactory implements AdventureFactory{
         Room r1 = new Room();
         r1.setDesc(
                 "It is much warmer in here out of the snow.\n"
-                        + "The cave is barely high enough to stand"
+                        + "The cave is barely high enough to stand. "
                         + "A small ladder descends into darkness in the center of the cave. (r1)" );
-
-        // Connect the outside to Room 1:
-        outside.setSide(2,r1);
-        r1.setSide(3,outside);
 
         // Room 2:
         Room r2 = new Room();
         r2.setDesc(
                 "It is very damp down here and there are markings\n" +
                         "on the wall. There is a large opening to the west,\n" +
-                        "and a eerie, dark tunnel to the east, and" +
+                        "an eerie, dark tunnel to the east, and \n" +
                         "a ladder ascending above. (r2)");
 
         // Room 3:
@@ -43,23 +38,18 @@ public class LevelOneAdventureFactory implements AdventureFactory{
                 +"To the east looks like the only way out of here.\n"
                 + "It appears someone took refuge here recently. (r3)");
 
-        // Connect Rooms 1, 2, & 3:
-        r1.setSide(5,r2);
-        r2.setSide(4,r1);
-        r2.setSide(3,r3);
-        r3.setSide(2, r2);
-
         // Room 4:
         Room r4 = new Room();
         r4.setDesc("The tunnel narrows and you are forced to crawl.\n"
-                + "It continues to the west, but seems to narrow.\n"
-                + "Another room opens to the north. You can see a small"
+                + "It continues to the east, but is very damp.\n"
+                + "Another room opens to the north. You can see a small\n"
                 + "skull in the corner. (r4)");
 
         // Room 5:
         Room r5 = new Room();
-        r5.setDesc("There is a locked door to the north. Someone has carved their name\n"
-                + "into it, 'Karl'. Looks like there is another cave explorer around. (r5)");
+        r5.setDesc("There is a locked door to the north. Someone has \n"
+                + "carved their name into it, 'Karl'. Looks like there\n "
+                + "is another cave explorer around. (r5)");
 
         // Room 6:
         Room r6 = new Room();
@@ -69,35 +59,18 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         // Room 7:
         Room r7 = new Room();
-        r7.setDesc("OH NO! You are not alone!\n" +
-                    "You have found Karl, fight him or run away. (r7)");
-
-        // Connect rooms 3, 4, 5, 6, & 7.
-        r2.setSide(2,r4);
-        r4.setSide(3,r2);
-        r4.setSide(0,r6);
-        r4.setSide(2,r5);
-        r5.setSide(3,r4);
-        r6.setSide(1,r4);
-        r7.setSide(3,r6);
-
-        // We add a door between r7 and r5:
-        Key theWrongKey = new Key();
-        theWrongKey.setDesc("An old rusty key.");
-        Door theWrongDoor = new Door(r7,r5,theWrongKey);
-        r5.setSide(0,theWrongDoor);
-        r7.setSide(1, theWrongDoor);
+        r7.setDesc("It is pitch black.");
 
         // Room 8:
         Room r8 = new Room();
-        r8.setDesc("It looks like someone has been camping in here." +
+        r8.setDesc("It looks like someone has been camping in here. " +
                 "A wide opening descends below, scrambling is the only way down. \n" +
-                "The room to the west looks holds memories.(r8)");
+                "The room to the west looks is very dark.(r8)");
 
         // Room 9:
         Room r9 = new Room();
         r9.setDesc("It looks like a small rodent has made a home in the corner.\n"
-                + "There is a narrow passage to the east covered by spider webs. (r9)\n");
+                + "There is a narrow passage to the east covered by spider webs. (r9)");
 
         // Room 10:
         Room r10 = new Room();
@@ -111,32 +84,66 @@ public class LevelOneAdventureFactory implements AdventureFactory{
                 "of the mountain. There is writing on the wall, 'BEWARE!'." +
                 "It looks like someone has hidden something in the corner. (r11).");
 
-        Treasure theTreasure = new Treasure();
-        theTreasure.setDesc("Karl's hidden gold.");
-        r11.addItem(theTreasure);
 
-        // Lets connect them:
+        // Connect the outside to Room 1:
+        outside.setSide(2,r1);
+
+        r1.setSide(3,outside);
+        r1.setSide(5,r2);
+
+        r2.setSide(4,r1);
+        r2.setSide(3,r3);
+        r2.setSide(2,r4);
+
+        r3.setSide(2, r2);
+
+        r4.setSide(3,r2);
+        r4.setSide(0, r6);
+        r4.setSide(2,r5);
+
+        r5.setSide(3,r4);
+
+        r6.setSide(1, r4);
+        r6.setSide(2, r7);
+
+        r7.setSide(3, r6);
         r7.setSide(2,r8);
 
+        r8.setSide(3, r7);
+        r8.setSide(5, r9);
 
-        r4.setSide(0,r8);
-        r8.setSide(1,r4);
-        r8.setSide(3,r9);
-        r8.setSide(2,r10);
-        r9.setSide(2,r8);
-        r10.setSide(3,r8);
+        r9.setSide(4, r8);
+        r9.setSide(2,r10);
 
-        // Create a key and put it in r6:
+        r10.setSide(3, r9);
+
+        // setup the wrong key and wrong door
+        Key theWrongKey = new Key();
+        theWrongKey.setDesc("An old rusty key.");
+        r3.addItem(theWrongKey);
+
+        Door theWrongDoor = new Door(r7,r5,theWrongKey);
+        r5.setSide(0, theWrongDoor);
+        r7.setSide(1, theWrongDoor);
+        r3.addItem(theWrongKey);
+
+        // create the key and door that hold the winning item
         Key theKey = new Key();
         theKey.setDesc("A shiny gold key.");
-        r6.addItem(theKey);
+        r5.addItem(theKey);
+        r2.setSide(2,r4);
 
-        // We add a door between r10 and r11:
         Door theDoor = new Door(r10,r11,theKey);
-        r10.setSide(5,theDoor);
-        r11.setSide(4,theDoor);
+        r10.setSide(4, theDoor);
+        r11.setSide(5, theDoor);
 
-        // Now set winning item and return the entrance:
+        // create the winning item
+        Treasure theTreasure = new Treasure();
+        theTreasure.setDesc("Karl's forgotten gold.");
+        r11.addItem(theTreasure);
+        winningItem = theTreasure;
+
+        // Now return the entrance:
         winningItem = theTreasure;
         return outside;
     }
