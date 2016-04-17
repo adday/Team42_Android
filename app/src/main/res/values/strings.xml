@@ -18,6 +18,20 @@
     <string name="treasure">Treasure</string>
     <string name="wrongKey">Wrong Key</string>
     <string name="flash">Flashlight</string>
+    <string name="instructions">The adventure game is a text based cave exploration game.
+                                To explore the cave you use the direction buttons. To interact
+                                with items as they appear use the grab and drop buttons.
+                                The goal of each level is to find the hidden gold and return it
+                                to the outside of the cave. Once this goal is completed the game
+                                cycles to a new level. The player can hold two items. Keys are used
+                                to open doors- make sure that you have the right key. A flashlight
+                                will cause the direction buttons to highlight directions that are
+                                open to move in green, directions blocked by a door in red, and
+                                directions that a player is unable to move are hidden on the respective
+                                button. The game is saved automatically and upon restarting the
+                                app the option to load a game will load the most recently saved game.
+                                If no game is saved, clicking load game will load a level 0 adventure.
+                                \n\n Have fun and enjoy the game!</string>
 
 
 </resources>
