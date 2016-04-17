@@ -262,22 +262,22 @@ public class AdventureActivity extends Activity {
         }
     }
 
-    //fxn to save game state in internal storage
-    //stores: lvl#, playerRoom#, & (item0 - itemN)room#
-    public void saveGame(View view){
-        String filename = "adventureSave.txt";
-        String lvl = "level";
-        String plyr = "player";
-        //open file stream
-        try {
-            FileOutputStream outStream = openFileOutput(filename, MODE_PRIVATE);
-            outStream.write(model.getLevel()); //write level out
-        } catch(FileNotFoundException e){
-            e.printStackTrace();
-        } catch(IOException e){
-            e.printStackTrace();
-        }
-    }
+//    //fxn to save game state in internal storage
+//    //stores: lvl#, playerRoom#, & (item0 - itemN)room#
+//    public void saveGame(View view){
+//        String filename = "adventureSave.txt";
+//        String lvl = "level";
+//        String plyr = "player";
+//        //open file stream
+//        try {
+//            FileOutputStream outStream = openFileOutput(filename, MODE_PRIVATE);
+//            outStream.write(model.getLevel()); //write level out
+//        } catch(FileNotFoundException e){
+//            e.printStackTrace();
+//        } catch(IOException e){
+//            e.printStackTrace();
+//        }
+//    }
 
     public void saveGame2(){
         //get data to save
@@ -290,8 +290,28 @@ public class AdventureActivity extends Activity {
         editor.putInt(getString(R.string.lvl), gameLvl);
         //store player room
         editor.putInt(getString(R.string.player), playerRoom);
-        editor.commit();
 
+        //get lvl so itemList contents are known
+        //get saveItemList
+        ArrayList<Integer> items = model.getSaveItemList();
+        if(gameLvl == 0){
+            //add treasure
+            editor.putInt(getString(R.string.treasure), items.get(0));
+            //add key
+            editor.putInt(getString(R.string.key), items.get(1));
+        }else{
+            //add key
+            editor.putInt(getString(R.string.key), items.get(0));
+            //add key
+            editor.putInt(getString(R.string.wrongKey), items.get(1));
+            //add treasure
+            editor.putInt(getString(R.string.flash), items.get(2));
+            //add treasure
+            editor.putInt(getString(R.string.treasure), items.get(3));
+        }
+
+        //commit save
+        editor.commit();
     }
 
     public ArrayList<Integer> loadGame(){
@@ -305,7 +325,24 @@ public class AdventureActivity extends Activity {
         settingsList.add(gameLvl);
         settingsList.add(playerRoom);
         //add item info to settings list
+        if(gameLvl == 0){
+            int keyRoom = loadFile.getInt(getString(R.string.key), 6);
+            int treasureRoom = loadFile.getInt(getString(R.string.treasure), 11);
+            //add treasure & add key
+            settingsList.add(treasureRoom); //index 2
+            settingsList.add(keyRoom); //index 3
+        }else{
+            int keyRoom = loadFile.getInt(getString(R.string.key), 5);
+            int wrongKeyRoom = loadFile.getInt(getString(R.string.wrongKey), 3);
+            int flashRoom = loadFile.getInt(getString(R.string.flash), 7);
+            int treasureRoom = loadFile.getInt(getString(R.string.treasure), 11);
+            //add treasure & add key
+            settingsList.add(keyRoom); // index 2
+            settingsList.add(wrongKeyRoom); //index 3
+            settingsList.add(flashRoom); //index 4
+            settingsList.add(treasureRoom); //index 5
 
+        }
 
         return settingsList;
     }
