@@ -5,10 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -28,23 +26,39 @@ public class AdventureActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-
-        //initialize connection to model and set inital view
-        model = new AdventureGameModelFacade();
-        TextView myView = (TextView) findViewById(R.id.roomView);
-        myView.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
-                            + model.getView());
+        setContentView(R.layout.start);
     }
 
 
  // This method is called at button click because we assigned the name to the
  	// "On Click property" of the button
  	public void myClickHandler(View view) {
-        TextView myView = (TextView) findViewById(R.id.roomView);
         String actionResult = "";
 
         switch (view.getId()) {
+            case R.id.newLvl0Adventure:
+                //initialize connection to model and set inital view
+                model = new AdventureGameModelFacade();
+                setContentView(R.layout.main);
+                TextView myView = (TextView) findViewById(R.id.roomView);
+                myView.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
+                        + model.getView());
+                break;
+            case R.id.newLvl1Adventure:
+                //initialize connection to model and set inital view
+                model = new AdventureGameModelFacade();
+                setContentView(R.layout.main);
+                TextView myView0 = (TextView) findViewById(R.id.roomView);
+                myView0.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
+                        + model.getView());
+            case R.id.savedAdventure:
+                //initialize connection to model and set inital view
+                model = new AdventureGameModelFacade();
+                setContentView(R.layout.main);
+                TextView myView1 = (TextView) findViewById(R.id.roomView);
+                myView1.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
+                        + model.getView());
+                break;
             case R.id.goUp:
                 actionResult = model.goUp();
                 break;
