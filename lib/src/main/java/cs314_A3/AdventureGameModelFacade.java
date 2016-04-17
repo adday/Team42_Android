@@ -205,4 +205,30 @@ public class AdventureGameModelFacade {
   public ArrayList<Integer> getSaveItemList(){
     return saveItemList;
   }
+
+  public ArrayList<Integer> useFlashLight(){
+
+    boolean hasFlashLight = false;
+    FlashLight f = new FlashLight();
+    Item[] playerItems = thePlayer.getItems();
+
+    // Loop through the player's items to check if they do have a flashlight
+    for(int i = 0; i < playerItems.length; i++){
+
+      if(playerItems[i] instanceof FlashLight) {
+        hasFlashLight = true;
+        f = (FlashLight)playerItems[i];
+      }
+
+    }
+
+    // If the player does have a FlashLight, call checkRoom and return that list, if not then return an empty list
+    if(hasFlashLight){
+    return f.checkRoom(thePlayer.getLoc());}
+
+    return new ArrayList<Integer>();
+
+  }
+
+
 }

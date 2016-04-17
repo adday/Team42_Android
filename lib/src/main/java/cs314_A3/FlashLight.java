@@ -1,13 +1,15 @@
 package cs314_A3;
 
+import java.util.ArrayList;
+
 /**
  * Created by eokvath on 4/17/16.
  */
 public class FlashLight extends Item{
 
-    public int[] checkRoom(Room playerLocation){
-    // Array of int that indicate whether the player is able to go that direction (ableToGoDir) / whether that direction is a door
-    int[] ableToGoDir = new int[6];
+    public ArrayList<Integer> checkRoom(Room playerLocation){
+    // Array of ints that indicate whether the player is able to go that direction (ableToGoDir) / whether that direction is a door
+        ArrayList<Integer> ableToGoDir = new ArrayList<Integer>();
 
         for(int i = 0; i<6; i++){
 
@@ -16,11 +18,11 @@ public class FlashLight extends Item{
             // If the side is an opening then ableToGoDir is 1
             // If the side is a Door then ableToGoDir is 2
             if(playerLocation.getSide(i) instanceof Wall){
-            ableToGoDir[i] = 0;
+            ableToGoDir.add(0);
             }else if(playerLocation.getSide(i) instanceof Door){
-                ableToGoDir[i] = 2;
+                ableToGoDir.add(2);
             }else{
-                ableToGoDir[i] = 1;
+                ableToGoDir.add(1);
             }
 
         }
