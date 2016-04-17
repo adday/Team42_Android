@@ -42,5 +42,6 @@
         android:id="@+id/newLvl1Adventure"
         android:layout_below="@+id/newLvl0Adventure"
         android:layout_centerHorizontal="true"
+        android:onClick="myClickHandler"
         android:layout_marginTop="42dp" />
 </RelativeLayout>
