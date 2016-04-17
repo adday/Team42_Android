@@ -15,6 +15,10 @@
     <string name="exit">QUIT</string>
     <string name="lvl">Level</string>
     <string name="player">Player</string>
+    <string name="key">Key</string>
+    <string name="treasure">Treasure</string>
+    <string name="wrongKey">Wrong Key</string>
+    <string name="flash">Flashlight</string>
 
 
 </resources>
