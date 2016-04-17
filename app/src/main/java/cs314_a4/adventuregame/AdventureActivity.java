@@ -44,7 +44,7 @@ public class AdventureActivity extends Activity {
         switch (view.getId()) {
             case R.id.newLvl0Adventure:
                 //initialize connection to model and set inital view
-                model = new AdventureGameModelFacade();
+                model = new AdventureGameModelFacade(0);
                 setContentView(R.layout.main);
                 TextView myView = (TextView) findViewById(R.id.roomView);
                 myView.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
@@ -52,14 +52,15 @@ public class AdventureActivity extends Activity {
                 break;
             case R.id.newLvl1Adventure:
                 //initialize connection to model and set inital view
-                model = new AdventureGameModelFacade();
+                model = new AdventureGameModelFacade(1);
                 setContentView(R.layout.main);
                 TextView myView0 = (TextView) findViewById(R.id.roomView);
                 myView0.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
                         + model.getView());
+                break;
             case R.id.savedAdventure:
                 //initialize connection to model and set inital view
-                model = new AdventureGameModelFacade();
+                model = new AdventureGameModelFacade(loadGame());
                 setContentView(R.layout.main);
                 TextView myView1 = (TextView) findViewById(R.id.roomView);
                 myView1.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
@@ -98,7 +99,7 @@ public class AdventureActivity extends Activity {
     // check if level is complete to reset GUI connection appropriately
     private String updateLevel(){
         if(model.levelComplete()){
-            model = new AdventureGameModelFacade();
+            model = new AdventureGameModelFacade(model.getLevel());
             return "Level complete, onto a new adventure!\n\n";}
         else
             return "";
@@ -198,7 +199,7 @@ public class AdventureActivity extends Activity {
 
     }
 
-    public ArrayList<Integer> loadGame2(){
+    public ArrayList<Integer> loadGame(){
         ArrayList<Integer> settingsList = new ArrayList<Integer>();
         //open shared preferences
         SharedPreferences loadFile = this.getPreferences(Context.MODE_PRIVATE);
