@@ -267,87 +267,6 @@ public class LevelZeroAdventureFactory implements AdventureFactory {
         theTreasure.setDesc("A bag filled with gold bars.");
         winningItem = theTreasure;
 
-
-        //set the treasure location
-        switch(savedGameState.get(2)){
-            case 0:
-                outside.addItem(theTreasure);
-                break;
-            case 1:
-                r1.addItem(theTreasure);
-                break;
-            case 2:
-                r2.addItem(theTreasure);
-                break;
-            case 3:
-                r3.addItem(theTreasure);
-                break;
-            case 4:
-                r4.addItem(theTreasure);
-                break;
-            case 5:
-                r5.addItem(theTreasure);
-                break;
-            case 6:
-                r6.addItem(theTreasure);
-                break;
-            case 7:
-                r7.addItem(theTreasure);
-                break;
-            case 8:
-                r8.addItem(theTreasure);
-                break;
-            case 9:
-                r9.addItem(theTreasure);
-                break;
-            case 10:
-                r10.addItem(theTreasure);
-                break;
-            case 11:
-                r11.addItem(theTreasure);
-                break;
-        }
-
-        //set the key location
-        switch(savedGameState.get(3)){
-            case 0:
-                outside.addItem(theKey);
-                break;
-            case 1:
-                r1.addItem(theKey);
-                break;
-            case 2:
-                r2.addItem(theKey);
-                break;
-            case 3:
-                r3.addItem(theKey);
-                break;
-            case 4:
-                r4.addItem(theKey);
-                break;
-            case 5:
-                r5.addItem(theKey);
-                break;
-            case 6:
-                r6.addItem(theKey);
-                break;
-            case 7:
-                r7.addItem(theKey);
-                break;
-            case 8:
-                r8.addItem(theKey);
-                break;
-            case 9:
-                r9.addItem(theKey);
-                break;
-            case 10:
-                r10.addItem(theKey);
-                break;
-            case 11:
-                r11.addItem(theKey);
-                break;
-        }
-
         //set player location and return
         Room playerLoc;
         switch(savedGameState.get(1)){
@@ -388,6 +307,94 @@ public class LevelZeroAdventureFactory implements AdventureFactory {
                 playerLoc = outside;
                 break;
         }
+
+        //set the treasure location
+        switch(savedGameState.get(2)){
+            case -1:
+                playerLoc.addItem(theTreasure);
+                break;
+            case 0:
+                outside.addItem(theTreasure);
+                break;
+            case 1:
+                r1.addItem(theTreasure);
+                break;
+            case 2:
+                r2.addItem(theTreasure);
+                break;
+            case 3:
+                r3.addItem(theTreasure);
+                break;
+            case 4:
+                r4.addItem(theTreasure);
+                break;
+            case 5:
+                r5.addItem(theTreasure);
+                break;
+            case 6:
+                r6.addItem(theTreasure);
+                break;
+            case 7:
+                r7.addItem(theTreasure);
+                break;
+            case 8:
+                r8.addItem(theTreasure);
+                break;
+            case 9:
+                r9.addItem(theTreasure);
+                break;
+            case 10:
+                r10.addItem(theTreasure);
+                break;
+            case 11:
+                r11.addItem(theTreasure);
+                break;
+        }
+
+        //set the key location
+        switch(savedGameState.get(3)){
+            case -1:
+                playerLoc.addItem(theKey);
+                break;
+            case 0:
+                outside.addItem(theKey);
+                break;
+            case 1:
+                r1.addItem(theKey);
+                break;
+            case 2:
+                r2.addItem(theKey);
+                break;
+            case 3:
+                r3.addItem(theKey);
+                break;
+            case 4:
+                r4.addItem(theKey);
+                break;
+            case 5:
+                r5.addItem(theKey);
+                break;
+            case 6:
+                r6.addItem(theKey);
+                break;
+            case 7:
+                r7.addItem(theKey);
+                break;
+            case 8:
+                r8.addItem(theKey);
+                break;
+            case 9:
+                r9.addItem(theKey);
+                break;
+            case 10:
+                r10.addItem(theKey);
+                break;
+            case 11:
+                r11.addItem(theKey);
+                break;
+        }
+
+
 
         return playerLoc;
     }

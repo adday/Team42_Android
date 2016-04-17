@@ -324,9 +324,52 @@ public class LevelOneAdventureFactory implements AdventureFactory{
         theTreasure.setDesc("Karl's forgotten gold.");
         winningItem = theTreasure;
 
+        //set player location and return
+        Room playerLoc;
+        switch(savedGameState.get(1)){
+            case 1:
+                playerLoc = r1;
+                break;
+            case 2:
+                playerLoc = r2;
+                break;
+            case 3:
+                playerLoc = r3;
+                break;
+            case 4:
+                playerLoc = r4;
+                break;
+            case 5:
+                playerLoc = r5;
+                break;
+            case 6:
+                playerLoc = r6;
+                break;
+            case 7:
+                playerLoc = r7;
+                break;
+            case 8:
+                playerLoc = r8;
+                break;
+            case 9:
+                playerLoc = r9;
+                break;
+            case 10:
+                playerLoc = r10;
+                break;
+            case 11:
+                playerLoc = r11;
+                break;
+            default:
+                playerLoc = outside;
+                break;
+        }
 
         //set the treasure location
         switch(savedGameState.get(5)){
+            case -1:
+                playerLoc.addItem(theTreasure);
+                break;
             case 0:
                 outside.addItem(theTreasure);
                 break;
@@ -367,6 +410,9 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         //set the key location
         switch(savedGameState.get(2)){
+            case -1:
+                playerLoc.addItem(theKey);
+                break;
             case 0:
                 outside.addItem(theKey);
                 break;
@@ -407,6 +453,9 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         //set the flashlight location
         switch(savedGameState.get(4)){
+            case -1:
+                playerLoc.addItem(theFlashlight);
+                break;
             case 0:
                 outside.addItem(theFlashlight);
                 break;
@@ -447,6 +496,9 @@ public class LevelOneAdventureFactory implements AdventureFactory{
 
         //set the key location
         switch(savedGameState.get(3)){
+            case -1:
+                playerLoc.addItem(theWrongKey);
+                break;
             case 0:
                 outside.addItem(theWrongKey);
                 break;
@@ -482,48 +534,6 @@ public class LevelOneAdventureFactory implements AdventureFactory{
                 break;
             case 11:
                 r11.addItem(theWrongKey);
-                break;
-        }
-
-
-        //set player location and return
-        Room playerLoc;
-        switch(savedGameState.get(1)){
-            case 1:
-                playerLoc = r1;
-                break;
-            case 2:
-                playerLoc = r2;
-                break;
-            case 3:
-                playerLoc = r3;
-                break;
-            case 4:
-                playerLoc = r4;
-                break;
-            case 5:
-                playerLoc = r5;
-                break;
-            case 6:
-                playerLoc = r6;
-                break;
-            case 7:
-                playerLoc = r7;
-                break;
-            case 8:
-                playerLoc = r8;
-                break;
-            case 9:
-                playerLoc = r9;
-                break;
-            case 10:
-                playerLoc = r10;
-                break;
-            case 11:
-                playerLoc = r11;
-                break;
-            default:
-                playerLoc = outside;
                 break;
         }
 

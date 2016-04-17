@@ -37,7 +37,15 @@ public class AdventureGameModelFacade {
         thePlayer = new Player();
         startRm = adventureFactory.createSavedAdventure(savedGameState);
         thePlayer.setRoom(startRm);
+        playerPickUpInitialItems(savedGameState);
     }
+
+  private void playerPickUpInitialItems(ArrayList<Integer> savedGameState){
+      for(int i=2;i<savedGameState.size();i++){
+          if(savedGameState.get(i) == -1)
+              thePlayer.pickUp(getRoomContents()[0]);
+      }
+  }
 
   //method that returns the locations of the items when
   //the game is first created. List will be used to save
@@ -51,8 +59,8 @@ public class AdventureGameModelFacade {
       saveItemList.add(11);//add 'theTreasure' room#
     }
     else if (lvl == 0){
-      saveItemList.add(6);//add 'theKey' room#
       saveItemList.add(11);//add 'theTreasure' room#
+      saveItemList.add(6);//add 'theKey' room#
     }
     else return;
   }
@@ -197,10 +205,6 @@ public class AdventureGameModelFacade {
   }
 
   public int getLevel() { return  level;}
-
-  public void updateSaveItemList(int index, int locNum){
-    saveItemList.set(index, locNum);
-  }
 
   public ArrayList<Integer> getSaveItemList(){
     return saveItemList;
