@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -34,8 +35,8 @@ public class AdventureActivity extends Activity {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onStop() {
+        super.onStop();
         saveGame();
     }
 
@@ -50,25 +51,19 @@ public class AdventureActivity extends Activity {
                 //initialize connection to model and set inital view
                 model = new AdventureGameModelFacade(0);
                 setContentView(R.layout.main);
-                TextView myView = (TextView) findViewById(R.id.roomView);
-                myView.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
-                        + model.getView());
+                setGameView();
                 break;
             case R.id.newLvl1Adventure:
                 //initialize connection to model and set inital view
                 model = new AdventureGameModelFacade(1);
                 setContentView(R.layout.main);
-                TextView myView0 = (TextView) findViewById(R.id.roomView);
-                myView0.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
-                        + model.getView());
+                setGameView();
                 break;
             case R.id.savedAdventure:
                 //initialize connection to model and set inital view
                 model = new AdventureGameModelFacade(loadGame());
                 setContentView(R.layout.main);
-                TextView myView1 = (TextView) findViewById(R.id.roomView);
-                myView1.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
-                        + model.getView());
+                setGameView();
                 break;
             case R.id.goUp:
                 actionResult = model.goUp();
@@ -99,6 +94,13 @@ public class AdventureActivity extends Activity {
     }
 
     // private methods
+
+    private void setGameView(){
+        setContentView(R.layout.main);
+        TextView myView = (TextView) findViewById(R.id.roomView);
+        myView.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
+                + model.getView());
+    }
 
     // check if level is complete to reset GUI connection appropriately
     private String updateLevel(){
@@ -264,22 +266,6 @@ public class AdventureActivity extends Activity {
         }
     }
 
-//    //fxn to save game state in internal storage
-//    //stores: lvl#, playerRoom#, & (item0 - itemN)room#
-//    public void saveGame1(View view){
-//        String filename = "adventureSave.txt";
-//        String lvl = "level";
-//        String plyr = "player";
-//        //open file stream
-//        try {
-//            FileOutputStream outStream = openFileOutput(filename, MODE_PRIVATE);
-//            outStream.write(model.getLevel()); //write level out
-//        } catch(FileNotFoundException e){
-//            e.printStackTrace();
-//        } catch(IOException e){
-//            e.printStackTrace();
-//        }
-//    }
 
     public void saveGame(){
         //get data to save
