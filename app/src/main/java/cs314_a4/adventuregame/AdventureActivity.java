@@ -2,20 +2,13 @@ package cs314_a4.adventuregame;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
-import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import cs314_A3.AdventureGameModelFacade;
@@ -39,7 +32,12 @@ public class AdventureActivity extends Activity {
         super.onStop();
         saveGame();
     }
-
+    public void myInstructionHandler(View view) {
+        if (view.getId() == R.id.instructions)
+            setContentView(R.layout.instructions);
+        else if(view.getId() == R.id.backToMain)
+            setContentView(R.layout.start);
+    }
 
  // This method is called at button click because we assigned the name to the
  	// "On Click property" of the button
@@ -47,22 +45,19 @@ public class AdventureActivity extends Activity {
         String actionResult = "";
 
         switch (view.getId()) {
-            case R.id.newLvl0Adventure:
+            case R.id.Lvl0Adventure:
                 //initialize connection to model and set inital view
                 model = new AdventureGameModelFacade(0);
-                setContentView(R.layout.main);
                 setGameView();
                 break;
-            case R.id.newLvl1Adventure:
+            case R.id.Lvl1Adventure:
                 //initialize connection to model and set inital view
                 model = new AdventureGameModelFacade(1);
-                setContentView(R.layout.main);
                 setGameView();
                 break;
             case R.id.savedAdventure:
                 //initialize connection to model and set inital view
                 model = new AdventureGameModelFacade(loadGame());
-                setContentView(R.layout.main);
                 setGameView();
                 break;
             case R.id.goUp:
