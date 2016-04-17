@@ -140,6 +140,12 @@ public class LevelOneAdventureFactory implements AdventureFactory{
         r5.setSide(0, theWrongDoor);
         r7.setSide(1, theWrongDoor);
 
+        //create the flashlight
+        FlashLight theFlashlight = new FlashLight();
+        theFlashlight.setItemId(2);
+        theFlashlight.setDesc("A flashlight.");
+        r7.addItem(theFlashlight);
+
         // create the key and door that hold the winning item
         Key theKey = new Key();
         theKey.setItemId(0);//set item id for saveList
@@ -303,6 +309,11 @@ public class LevelOneAdventureFactory implements AdventureFactory{
         theKey.setDesc("A shiny gold key.");
         r2.setSide(2,r4);
 
+        //create the flashlight
+        FlashLight theFlashlight = new FlashLight();
+        theFlashlight.setItemId(2);
+        theFlashlight.setDesc("A flashlight.");
+
         Door theDoor = new Door(r10,r11,theKey);
         r10.setSide(4, theDoor);
         r11.setSide(5, theDoor);
@@ -391,6 +402,46 @@ public class LevelOneAdventureFactory implements AdventureFactory{
                 break;
             case 11:
                 r11.addItem(theKey);
+                break;
+        }
+
+        //set the flashlight location
+        switch(savedGameState.get(4)){
+            case 0:
+                outside.addItem(theFlashlight);
+                break;
+            case 1:
+                r1.addItem(theFlashlight);
+                break;
+            case 2:
+                r2.addItem(theFlashlight);
+                break;
+            case 3:
+                r3.addItem(theFlashlight);
+                break;
+            case 4:
+                r4.addItem(theFlashlight);
+                break;
+            case 5:
+                r5.addItem(theFlashlight);
+                break;
+            case 6:
+                r6.addItem(theFlashlight);
+                break;
+            case 7:
+                r7.addItem(theFlashlight);
+                break;
+            case 8:
+                r8.addItem(theFlashlight);
+                break;
+            case 9:
+                r9.addItem(theFlashlight);
+                break;
+            case 10:
+                r10.addItem(theFlashlight);
+                break;
+            case 11:
+                r11.addItem(theFlashlight);
                 break;
         }
 
