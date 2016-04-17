@@ -29,6 +29,12 @@ public class AdventureActivity extends Activity {
         setContentView(R.layout.start);
     }
 
+    @Override
+    public void onDestroy() {
+        saveGame2();
+        super.onDestroy();
+    }
+
 
  // This method is called at button click because we assigned the name to the
  	// "On Click property" of the button
@@ -191,6 +197,22 @@ public class AdventureActivity extends Activity {
         editor.putInt(getString(R.string.player), playerRoom);
         editor.commit();
 
+    }
+
+    public ArrayList<Integer> loadGame2(){
+        ArrayList<Integer> settingsList = new ArrayList<Integer>()
+        //open shared preferences
+        SharedPreferences loadFile = getActivity().getPreferences(Context.MODE_PRIVATE);
+        //get lvl and playerRoom#, default to beginning of lvl0
+        int gameLvl = loadFile.getInt(getString(R.string.lvl), 0);
+        int playerRoom = loadFile.getInt(getString(R.string.player), 0);
+        //add info to settings list
+        settingsList.add(gameLvl);
+        settingsList.add(playerRoom);
+        //add item info to settings list
+
+
+        return settingsList;
     }
 
 }
