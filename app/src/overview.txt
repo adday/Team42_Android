@@ -7,7 +7,10 @@
 
 @Specific contributions by each person:
 -----------------------------------------------
--Alex Day:
+-Alex Day: -Added the AbstractFactory design pattern in the form of the AdventureFactory
+           -Created the start page that gives the player options on how the game should begin
+           -Designed level 1 cave layout
+           -Produced documentation items that correlate with tasks completed
 
 -Ed Okvath:
 
@@ -16,7 +19,7 @@
 
 @Time (hours) spent by each person on this assignment:
 -----------------------------------------------
-Alex Day:
+Alex Day: 12
 Ed Okvath:
 Adrion Q Arkenberg:
 
