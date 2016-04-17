@@ -12,7 +12,9 @@
            -Designed level 1 cave layout
            -Produced documentation items that correlate with tasks completed
 
--Ed Okvath:
+-Ed Okvath: -Added FlashLight class with its functionality
+            -Helped debug general problems
+            -Wrote parts of the overview
 
 -Adrion Q Arkenberg:
 
@@ -20,7 +22,7 @@
 @Time (hours) spent by each person on this assignment:
 -----------------------------------------------
 Alex Day: 12
-Ed Okvath:
+Ed Okvath: 12
 Adrion Q Arkenberg:
 
 
@@ -33,7 +35,10 @@ I have not given, received, or used any unauthorized assistance.
 
 @Description of Difficulty Mechanism:
 ------------------------------------------------
-
+Added false keys and a flashlight in a new level(level 1). This can potentially trick
+the player as well as makes the skill of item management more important as the flashlight can
+help, but you can only have 2 items at a time so players must choose when to have keys, flashlights,
+or treasure. Players can also get stuck if they play the level incorrectly.
 
 @Abstract Factory design implementation:
 ------------------------------------------------
@@ -41,15 +46,23 @@ I have not given, received, or used any unauthorized assistance.
 
 @Description of other Game Enhancements:
 ------------------------------------------------
-
+Added save and load functionality so users can continue their games without losing progress.
+Added a new item called a flashlight that makes navigating levels a lot easier by changing the UI
+to indicate what directions the user can go in.
 
 @User Needs to Know:
 ------------------------------------------------
-
+1. The game auto-saves on exit
+2. Load game defaults to the beginning of level zero if nothing has been saved
+3. Each level is won by bringing the treasure outside
 
 @Special Instructions:
 ------------------------------------------------
-
+How to use the flashlight:
+    -Green text on the UI means there is another room in that direction
+    -Red text on the UI means there is a door in that direction
+    -No text on the UI means there is a wall in that direction
+    -User must have the flashlight picked up in order to use it
 
 @Test Information:
 ------------------------------------------------

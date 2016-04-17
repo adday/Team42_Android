@@ -8,7 +8,8 @@ import java.util.ArrayList;
 public class FlashLight extends Item{
 
     public ArrayList<Integer> checkRoom(Room playerLocation){
-    // Array of ints that indicate whether the player is able to go that direction (ableToGoDir) / whether that direction is a door
+
+    // ArrayList of ints that indicate whether the player is able to go that direction (ableToGoDir)
         ArrayList<Integer> ableToGoDir = new ArrayList<Integer>();
 
         for(int i = 0; i<6; i++){
