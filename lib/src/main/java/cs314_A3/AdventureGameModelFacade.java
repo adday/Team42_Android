@@ -12,26 +12,39 @@ package cs314_A3;
  */
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class AdventureGameModelFacade {
 	private Player thePlayer;
 	private Room startRm;
     private AdventureFactory adventureFactory;
-    private static int level = 0;
+    private static int level;
     private ArrayList<Integer> saveItemList;
 
-  public AdventureGameModelFacade() {
+  public AdventureGameModelFacade(int level) {
+      this.level = level;
+      initializeSaveItemList(level);
       adventureFactory = getAdventureFactory();
 	  thePlayer = new Player();
 	  startRm = adventureFactory.createAdventure();
 	  thePlayer.setRoom(startRm);
   }
 
+  public AdventureGameModelFacade(ArrayList<Integer> savedGameState) {
+        level = savedGameState.get(0);
+        initializeSaveItemList(level);
+        adventureFactory = getAdventureFactory();
+        thePlayer = new Player();
+        startRm = adventureFactory.createSavedAdventure(savedGameState);
+        thePlayer.setRoom(startRm);
+    }
+
   //method that returns the locations of the items when
   //the game is first created. List will be used to save
   //game, so must be updated when items move
   private void initializeSaveItemList(int lvl){
-    if(lvl == 1){
+      saveItemList = new ArrayList<Integer>();
+      if(lvl == 1){
       saveItemList.add(6);//add 'theKey' room#
       saveItemList.add(3);//add 'wrongKey' room#
       saveItemList.add(7);//add 'flashlight' room#
@@ -129,7 +142,7 @@ public class AdventureGameModelFacade {
 			return "You have nothing to drop.";
     else {
         //update saveItemList
-        Item droppingItem = thePlayer.getItems()[itemToToss];
+        Item droppingItem = thePlayer.getItems()[itemToToss-1];
         int currRoom = thePlayer.getPlayerRoomNum();
         if(level == 0) {
             switch (droppingItem.getItemId()){
