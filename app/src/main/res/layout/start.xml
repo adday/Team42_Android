@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#c7eeb7">
 
     <Button
         android:layout_width="wrap_content"
@@ -8,8 +9,10 @@
         android:text="New Level 0 Adventure"
         android:id="@+id/newLvl0Adventure"
         android:onClick="myClickHandler"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:backgroundTint="#4f81d1"
+        android:layout_above="@+id/newLvl1Adventure"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -19,7 +22,8 @@
         android:onClick="myClickHandler"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="69dp" />
+        android:layout_marginBottom="69dp"
+        android:backgroundTint="#4f81d1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,21 +31,33 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Adventure Game"
         android:id="@+id/startText"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="160dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="@dimen/abc_text_size_display_2_material"
+        android:textColor="#9f5622"
+        android:textStyle="bold"
+        android:layout_above="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Level 1 Adventure"
         android:id="@+id/newLvl1Adventure"
-        android:layout_below="@+id/newLvl0Adventure"
-        android:layout_centerHorizontal="true"
         android:onClick="myClickHandler"
-        android:layout_marginTop="42dp" />
+        android:backgroundTint="#4f81d1"
+        android:layout_above="@+id/savedAdventure"
+        android:layout_alignLeft="@+id/newLvl0Adventure"
+        android:layout_alignStart="@+id/newLvl0Adventure"
+        android:layout_marginBottom="95dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Created by: Team 42"
+        android:id="@+id/textView"
+        android:layout_marginBottom="54dp"
+        android:layout_above="@+id/newLvl0Adventure"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

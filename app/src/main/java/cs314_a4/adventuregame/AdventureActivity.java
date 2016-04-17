@@ -35,8 +35,8 @@ public class AdventureActivity extends Activity {
 
     @Override
     public void onDestroy() {
-        saveGame();
         super.onDestroy();
+        saveGame();
     }
 
 
@@ -296,6 +296,7 @@ public class AdventureActivity extends Activity {
         //get lvl so itemList contents are known
         //get saveItemList
         ArrayList<Integer> items = model.getSaveItemList();
+
         if(gameLvl == 0){
             //add treasure
             editor.putInt(getString(R.string.treasure), items.get(0));
@@ -343,7 +344,6 @@ public class AdventureActivity extends Activity {
             settingsList.add(wrongKeyRoom); //index 3
             settingsList.add(flashRoom); //index 4
             settingsList.add(treasureRoom); //index 5
-
         }
 
         return settingsList;
