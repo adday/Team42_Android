@@ -21,13 +21,13 @@ Split story 2-A (5PTS): As a CS 314 student, I want to add save and restore game
 
 
     @Tasks who*(estimation/actual time):
-        adrion*(1hr/hr) Decide how best to save, and what is needed
-        adrion*(3hrs/hrs) Implement saving and restoring methods
-        adrion*(2hrs/hrs) Added save/load features to GUI and connect to underlying methods
+        adrion*(1hr/2hr) Decide how best to save, and what is needed
+        adrion*(3hrs/3hrs) Implement saving and restoring methods
+        adrion*(2hrs/1.5hrs) Added save/load features to GUI and connect to underlying methods
         all*(1.5hrs/hrs) Write tests for new level implementation
         all*(1hr/hr) Fix bugs introduced by tests
         adrion*(1hr/hr) Add description of save/load mechanism to overview.txt file
-        all*(1hr/hr) Ensure that DoD and rubric are both met
+        all*(1hr/1hr) Ensure that DoD and rubric are both met
 
 
 
