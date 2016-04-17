@@ -73,7 +73,7 @@ public class AdventureGameModelFacade {
   }
 
   public boolean levelComplete(){
-    if(thePlayer.haveItem(adventureFactory.getWinningItem()) && thePlayer.getLoc() == startRm){
+    if(thePlayer.haveItem(adventureFactory.getWinningItem()) && thePlayer.getLoc().getRoomNum() == 0){
       level = (level+1) % 2;
       return true;}
     else
