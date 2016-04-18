@@ -40,7 +40,7 @@ public class AdventureGameModelFacade {
    */
   public AdventureGameModelFacade(ArrayList<Integer> savedGameState) {
         level = savedGameState.get(0);
-        initializeSaveItemList(level);
+        initializeLoadItemList(savedGameState);
         adventureFactory = getAdventureFactory();
         thePlayer = new Player();
         startRm = adventureFactory.createSavedAdventure(savedGameState);

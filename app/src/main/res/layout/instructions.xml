@@ -3,16 +3,6 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="#c7eeb7">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="back"
-        android:id="@+id/backToMain"
-        android:backgroundTint="#4f81d1"
-        android:onClick="myInstructionHandler"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,8 +15,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="22dp"
         android:textColor="#9f5622"
-        android:textSize="@dimen/abc_floating_window_z"
-        android:layout_above="@+id/backToMain" />
+        android:textSize="@dimen/abc_dialog_padding_top_material"
+        android:layout_alignParentBottom="true" />
 
     <TextView
         android:layout_width="wrap_content"
