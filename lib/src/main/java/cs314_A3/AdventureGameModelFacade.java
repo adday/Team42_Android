@@ -56,9 +56,10 @@ public class AdventureGameModelFacade {
    */
   private void playerPickUpInitialItems(ArrayList<Integer> savedGameState){
       for(int i=2;i<savedGameState.size();i++) {
-          for(int j = 0; j < getRoomContents().length;j++){
-              if(getRoomContents()[j].getItemId() == -1){
-                  thePlayer.pickUp(getRoomContents()[j]);
+          if(savedGameState.get(i) == -1) {
+              for(int j=0;j<getRoomContents().length;j++){
+                  if(getRoomContents()[j].getItemId() == (i-2))
+                      thePlayer.pickUp(getRoomContents()[j]);
               }
           }
       }
@@ -70,7 +71,7 @@ public class AdventureGameModelFacade {
   private void initializeSaveItemList(int lvl){
       saveItemList = new ArrayList<Integer>();
       if(lvl == 1){
-      saveItemList.add(6);//add 'theKey' room#
+      saveItemList.add(5);//add 'theKey' room#
       saveItemList.add(3);//add 'wrongKey' room#
       saveItemList.add(7);//add 'flashlight' room#
       saveItemList.add(11);//add 'theTreasure' room#
