@@ -3,10 +3,17 @@ package cs314_A3;
 import java.util.ArrayList;
 
 /**
- * Created by eokvath on 4/17/16.
- */
+ Adventure Game  Program Code
+ filename: FlashLight.java
+ purpose: contains code for flashlight item class
+ Author: Created by eokvath on 4/17/16.
+ **/
+
 public class FlashLight extends Item{
 
+    //method that checks what the current room's walls are.
+    //returns an arraylist of integers pertaining to what the walls
+    //of the room are
     public ArrayList<Integer> checkRoom(Room playerLocation){
 
     // ArrayList of ints that indicate whether the player is able to go that direction (ableToGoDir)

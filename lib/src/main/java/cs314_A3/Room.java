@@ -36,6 +36,11 @@ public class Room implements CaveSite {
 
 	private String description;
 
+	//variable used for saving which room things are in
+	/*
+	-1: invalid
+	0-11: valid room
+	 */
 	private int roomNum = -1;
 
 	private CaveSite[] side = new CaveSite[6];

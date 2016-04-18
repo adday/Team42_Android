@@ -14,6 +14,17 @@ import java.util.ArrayList;
 import cs314_A3.AdventureGameModelFacade;
 import cs314_A3.Item;
 
+/**
+    Adventure Game  Program Code
+     filename: AdventureActivity.java
+     purpose: contains code for the android GUI that connect to the
+        adventureGameModelFacade.
+     Authors:
+        Adrion Q Arkenberg
+        Alex Day
+        Ed Okvath
+ **/
+
 
 public class AdventureActivity extends Activity {
 
@@ -27,19 +38,23 @@ public class AdventureActivity extends Activity {
         setContentView(R.layout.start);
     }
 
+    /** Called when the activity goes off-screen. */
     @Override
     public void onStop() {
         super.onStop();
         saveGame();
     }
+
+    //method to handle the 'instructions' activity that's connected
+    //to the corresponding button on the 'start' activity
     public void myInstructionHandler(View view) {
-        if (view.getId() == R.id.instructions)
+        if (view.getId() == R.id.instructions) // send from 'start' to 'instructions'
             setContentView(R.layout.instructions);
-        else if(view.getId() == R.id.backToMain)
+        else if(view.getId() == R.id.backToMain) // send back to 'start'
             setContentView(R.layout.start);
     }
 
- // This method is called at button click because we assigned the name to the
+    // This method is called at button click because we assigned the name to the
  	// "On Click property" of the button
  	public void myClickHandler(View view) {
         String actionResult = "";
@@ -90,6 +105,8 @@ public class AdventureActivity extends Activity {
 
     // private methods
 
+    // fxn that sets the initial text of the game,
+    // and switches the view to the main game view
     private void setGameView(){
         setContentView(R.layout.main);
         TextView myView = (TextView) findViewById(R.id.roomView);
@@ -115,7 +132,7 @@ public class AdventureActivity extends Activity {
 
         updateRoomItems();
         updateUserItems();
-        useFlashLight();
+        useFlashLight(); //uses flashlight if held
     }
 
     // updates room items comboBox to reflect what's currently in the room
@@ -146,7 +163,7 @@ public class AdventureActivity extends Activity {
         userItemsList.setAdapter(itemsAdapter);
     }
 
-
+    //fxn that handles picking items out of room
     private String grab() {
         ListView roomItemsList = (ListView) findViewById(R.id.roomItemSelector);
 
@@ -161,6 +178,7 @@ public class AdventureActivity extends Activity {
         else return model.grabItem(itemList[itemNum]);
     }
 
+    //fxn that handles user dropping item into room
     private String drop() {
         ListView userItemsList = (ListView) findViewById(R.id.userItemSelector);
         int itemNum = userItemsList.getCheckedItemPosition();
@@ -169,6 +187,9 @@ public class AdventureActivity extends Activity {
         else return model.dropItem(itemNum + 1);
     }
 
+    //fxn checks if user is carrying the flashlight
+    //if they are: changes button text to indicate path in cave
+    //else: sets button text color to black (default)
     private void useFlashLight(){
         ArrayList<Integer> ableToGoDir = model.useFlashLight();
 
@@ -184,6 +205,8 @@ public class AdventureActivity extends Activity {
 
     }
 
+    //auxiliary helper fxn for 'useFlashlight' fxn
+    //changes the text color for a given button to the given color
     private void setButtonColor(int i, int colorIndicator){
         switch(i) {
             case 0:
@@ -261,7 +284,13 @@ public class AdventureActivity extends Activity {
         }
     }
 
-
+    //fxn called when the game stops. [ie AUTOSAVES]
+    /*
+    SAVES: level#, playerRoom#, itemRoomNum# (foreach item in itemsOnLvl)
+    ITEM ORDER:
+        0: treasure, key
+        1: key, wrongKey, flashlight, treasure
+     */
     public void saveGame(){
         //get data to save
         int gameLvl = model.getLevel();
@@ -298,6 +327,15 @@ public class AdventureActivity extends Activity {
         editor.commit();
     }
 
+    //fxn called when the game reloads.
+    /*
+    LOADS: level#, playerRoom#, itemRoomNum# (foreach item in itemsOnLvl)
+    ITEM KEYS:
+        0: Treasure, Key
+        1: Key, WrongKey, Flashlight, Treasure
+    RETURNS: an arraylist of ints containing all loaded data
+    DEFAULT: returns items in their starting places for each level (if no file exists)
+     */
     public ArrayList<Integer> loadGame(){
         ArrayList<Integer> settingsList = new ArrayList<Integer>();
         //open shared preferences
@@ -327,6 +365,7 @@ public class AdventureActivity extends Activity {
             settingsList.add(treasureRoom); //index 5
         }
 
+        //return arraylist of all items loaded
         return settingsList;
     }
 
