@@ -50,8 +50,6 @@ public class AdventureActivity extends Activity {
     public void myInstructionHandler(View view) {
         if (view.getId() == R.id.instructions) // send from 'start' to 'instructions'
             setContentView(R.layout.instructions);
-        else if(view.getId() == R.id.backToMain) // send back to 'start'
-            setContentView(R.layout.start);
     }
 
     // This method is called at button click because we assigned the name to the
