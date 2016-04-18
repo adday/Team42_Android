@@ -63,6 +63,7 @@ to indicate what directions the user can go in.
 1. The game auto-saves on exit
 2. Load game defaults to the beginning of level zero if nothing has been saved
 3. Each level is won by bringing the treasure outside
+4. Gameplay instructions are available in the start-up screen
 
 @Special Instructions:
 ------------------------------------------------

@@ -14,16 +14,6 @@ import java.util.ArrayList;
 import cs314_A3.AdventureGameModelFacade;
 import cs314_A3.Item;
 
-/**
-    Adventure Game  Program Code
-     filename: AdventureActivity.java
-     purpose: contains code for the android GUI that connect to the
-        adventureGameModelFacade.
-     Authors:
-        Adrion Q Arkenberg
-        Alex Day
-        Ed Okvath
- **/
 
 
 public class AdventureActivity extends Activity {
@@ -38,12 +28,22 @@ public class AdventureActivity extends Activity {
         setContentView(R.layout.start);
     }
 
+    // called when back button is pressed
     /** Called when the activity goes off-screen. */
+    @Override
+    public void onBackPressed() {
+        onStop();
+        setContentView(R.layout.start);
+    }
+
+    //called when android is moved out from main view on device
     @Override
     public void onStop() {
         super.onStop();
         saveGame();
     }
+
+    // handles click of instruction button from start.xml screen
 
     //method to handle the 'instructions' activity that's connected
     //to the corresponding button on the 'start' activity
