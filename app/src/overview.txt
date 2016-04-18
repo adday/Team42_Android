@@ -11,19 +11,23 @@
            -Created the start page that gives the player options on how the game should begin
            -Designed level 1 cave layout
            -Produced documentation items that correlate with tasks completed
+           -Added instructions page off of home page
 
 -Ed Okvath: -Added FlashLight class with its functionality
             -Helped debug general problems
             -Wrote parts of the overview
 
--Adrion Q Arkenberg:
+-Adrion Q Arkenberg: -Wrote code to save and load game, & added room tracking fxnality
+                     -Documented code and added method comments
+                     -Added user stories and overview.txt file in initial commit
+                     -Helped design level loading system in Factory with Alex
 
 
 @Time (hours) spent by each person on this assignment:
 -----------------------------------------------
 Alex Day: 12
 Ed Okvath: 12
-Adrion Q Arkenberg:
+Adrion Q Arkenberg: 12
 
 
 @CSU Honor Pledge:
@@ -67,6 +71,30 @@ How to use the flashlight:
     -Red text on the UI means there is a door in that direction
     -No text on the UI means there is a wall in that direction
     -User must have the flashlight picked up in order to use it
+
+@Saving/Loading Mechanism Explanantion:
+------------------------------------------------
+* AUTOSAVE FEATURE
+    -Whenever the game is removed from the screen by the user (closed, back-out-of, ect),
+        it is autosaved in the default sharedPreferences of the main activity.
+
+* LOAD GAME FEATURE
+    -DEFAULT (ie no saved game) The game begins just as level 1 would begin, with the items
+        in their default locations and the player holding nothing.
+    -INTENDED (game saved)  The game resumes from the user's save, with the player placed
+        in their most-recent room, on the level of the game they were playing, with all items
+        in their proper locations, both in the cave and in the player's inventory.
+        loads from the saved sharedPreferences saved earlier.
+
+* SAVE METHOD: key-value pairs
+    level, #
+    player, #
+    item0, #
+    ...
+    itemN, #
+
+    WHERE ALL '#' ARE THE ROOM NUMBERS WHERE THOSE ITEMS ARE LOCATED
+    (VALUE OF '-1' IS THE PLAYER)
 
 @Test Information:
 ------------------------------------------------
