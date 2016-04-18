@@ -102,6 +102,6 @@ How to use the flashlight:
 - # of new tests written: 6
 - # of new defects found: 0
 - # of defects fixed: 0
-- Total # of tests run: 48
-- Total # tests passed: 48
+- Total # of tests run: 50
+- Total # tests passed: 50
 
