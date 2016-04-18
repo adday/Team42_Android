@@ -27,11 +27,21 @@ public class AdventureActivity extends Activity {
         setContentView(R.layout.start);
     }
 
+    // called when back button is pressed
+    @Override
+    public void onBackPressed() {
+        onStop();
+        setContentView(R.layout.start);
+    }
+
+    //called when android is moved out from main view on device
     @Override
     public void onStop() {
         super.onStop();
         saveGame();
     }
+
+    // handles click of instruction button from start.xml screen
     public void myInstructionHandler(View view) {
         if (view.getId() == R.id.instructions)
             setContentView(R.layout.instructions);
@@ -90,6 +100,7 @@ public class AdventureActivity extends Activity {
 
     // private methods
 
+    //sets game view, used in myClickHandler when starting an adventure
     private void setGameView(){
         setContentView(R.layout.main);
         TextView myView = (TextView) findViewById(R.id.roomView);
