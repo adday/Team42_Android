@@ -51,9 +51,7 @@ public class Item {
 
 	public int getItemId(){ return itemId;}
 
-	//room# setters and getters
-	public int getCurrRoom(){return currRoom;}
-
+	//room# setters
 	public void setCurrRoom(int roomNum){
 		currRoom = roomNum;
 	}
