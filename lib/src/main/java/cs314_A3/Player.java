@@ -42,6 +42,11 @@ public class Player {
 	// Room used for player location
 	private Room myLoc;
 
+	//variable used for saving which room the player is in
+	/*
+	-1: invalid
+	0-11: valid room player is in
+	 */
 	private int playerRoomNum = -1; //set default roomNum to invalid
 
 	private Item[] myThings = new Item[2];

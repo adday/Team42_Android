@@ -3,8 +3,15 @@ package cs314_A3;
 import java.util.ArrayList;
 
 /**
- *
- */
+     Adventure Game  Program Code
+     filename: LevelOneAdventureFactory.java
+     purpose: contains code for creating a new level1 cave,
+        a loaded level1 cave, and set the winning item for level1
+     Authors:
+         Adrion Q Arkenberg
+         Alex Day
+         Ed Okvath
+ **/
 public class LevelOneAdventureFactory implements AdventureFactory{
     Item winningItem;
 

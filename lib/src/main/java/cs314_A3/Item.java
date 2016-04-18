@@ -27,6 +27,12 @@ public class Item {
 
 	private String description;
 
+	//variable used for saving which room the item is in
+	/*
+	-2: invalid
+	-1: on player
+	0-11: in room
+	 */
 	private int currRoom = -2;
 
 	private int itemId;

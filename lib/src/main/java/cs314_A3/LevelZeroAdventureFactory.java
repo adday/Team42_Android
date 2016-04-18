@@ -3,8 +3,15 @@ package cs314_A3;
 import java.util.ArrayList;
 
 /**
- */
-
+     Adventure Game  Program Code
+     filename: LevelZeroAdventureFactory.java
+     purpose: contains code for creating a new level0 cave,
+        a loaded level0 cave, and set the winning item for level0
+     Authors:
+         Adrion Q Arkenberg
+         Alex Day
+         Ed Okvath
+ **/
 public class LevelZeroAdventureFactory implements AdventureFactory {
     Item winningItem;
 

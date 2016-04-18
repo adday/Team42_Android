@@ -12,14 +12,19 @@ package cs314_A3;
  */
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class AdventureGameModelFacade {
+    //private class variables
 	private Player thePlayer;
 	private Room startRm;
     private AdventureFactory adventureFactory;
     private static int level;
     private ArrayList<Integer> saveItemList;
 
+  //constructor for creating a given level
+  //of the adventure game, and setting the player in that room
+  //CALLED WHEN A NEW GAME IS STARTED ON EITHER LEVEL
   public AdventureGameModelFacade(int level) {
       this.level = level;
       initializeSaveItemList(level);
@@ -29,6 +34,11 @@ public class AdventureGameModelFacade {
 	  thePlayer.setRoom(startRm);
   }
 
+  /*
+   constructor for creating a loaded game
+   the loaded data from the save file is passed in
+   as the arraylist
+   */
   public AdventureGameModelFacade(ArrayList<Integer> savedGameState) {
         level = savedGameState.get(0);
         initializeSaveItemList(level);
@@ -39,6 +49,12 @@ public class AdventureGameModelFacade {
         playerPickUpInitialItems(savedGameState);
     }
 
+  /*
+   auxiliary method for the constructor that loads a saved game
+   picks up all the items in the savedGame arraylist that are
+   marked '-1' indicating they're on the player.
+     NOTE: THE ITEMS ARE ADDED TO THE PLAYERS ROOM IN THE LEVEL CONSTRUCTORS
+   */
   private void playerPickUpInitialItems(ArrayList<Integer> savedGameState){
       for(int i=2;i<savedGameState.size();i++){
           if(savedGameState.get(i) == -1)
@@ -64,6 +80,9 @@ public class AdventureGameModelFacade {
     else return;
   }
 
+    //method called from the constructor
+    //calls the single level constructors depending on the
+    //state of 'level' static variable
   private AdventureFactory getAdventureFactory() {
     if(level == 0)
         return new LevelZeroAdventureFactory();
@@ -71,6 +90,10 @@ public class AdventureGameModelFacade {
         return new LevelOneAdventureFactory();
   }
 
+    //method to check whether the player has brought
+    //the winning item outside
+    //if so: increments level and returns true
+    //else returns false
   public boolean levelComplete(){
     if(thePlayer.haveItem(adventureFactory.getWinningItem()) && thePlayer.getLoc().getRoomNum() == 0){
       level = (level+1) % 2;
@@ -107,19 +130,47 @@ public class AdventureGameModelFacade {
      return thePlayer.look();
      }
 
+  public String showItems(){
+     return thePlayer.showMyThings();
+     }
+
+  //new grab method to also update itemlist used for saving
+  //as well as grab item from room
   public String grabItem(Item item){
 	  if (thePlayer.handsFull())
 		  return "Your hands are full.";
 	  else {
 		 thePlayer.pickUp(item);
          //update saveItemList
-         saveItemList.set(item.getItemId(), -1);
-        }
+         if(level == 0) {
+            switch (item.getItemId()){
+              case 0: saveItemList.set(0, -1); break;
+              case 1: saveItemList.set(1, -1); break;
+            }
+         }
+         else {
+           switch (item.getItemId()) {
+             case 0:
+               saveItemList.set(0, -1);
+               break;
+             case 1:
+               saveItemList.set(1, -1);
+               break;
+             case 2:
+               saveItemList.set(2, -1);
+               break;
+             case 3:
+               saveItemList.set(3, -1);
+               break;
+           }
+         }//END SAVEITEMLIST UPDATING
 		 (thePlayer.getLoc()).removeItem(item);
 		 return "Item picked up.";
-     }
+		}
+  }
 
-  
+  //new drop method to also update itemlist used for saving
+  //as well as drop item into room
   public String dropItem(int itemToToss){
     if(thePlayer.handsEmpty())
 			return "You have nothing to drop.";
@@ -127,9 +178,30 @@ public class AdventureGameModelFacade {
         //update saveItemList
         Item droppingItem = thePlayer.getItems()[itemToToss-1];
         int currRoom = thePlayer.getPlayerRoomNum();
-        saveItemList.set(droppingItem.getItemId(), currRoom);
-        thePlayer.drop(itemToToss);
-        return "Item dropped.";
+        if(level == 0) {
+            switch (droppingItem.getItemId()){
+              case 0: saveItemList.set(0, currRoom); break;
+              case 1: saveItemList.set(1, currRoom); break;
+            }
+        }
+        else {
+            switch (droppingItem.getItemId()) {
+                case 0:
+                  saveItemList.set(0, currRoom);
+                  break;
+                case 1:
+                  saveItemList.set(1, currRoom);
+                  break;
+                case 2:
+                  saveItemList.set(2, currRoom);
+                  break;
+                case 3:
+                  saveItemList.set(3, currRoom);
+                  break;
+            }
+        }//END SAVEITEMLIST UPDATING
+          thePlayer.drop(itemToToss);
+          return "Item dropped.";
     }
   }
   
@@ -164,8 +236,10 @@ public class AdventureGameModelFacade {
     return saveItemList;
   }
 
+   //method to check whether the player is currently
+   //carrying a flashlight obj
   public ArrayList<Integer> useFlashLight(){
-
+    //get vars
     boolean hasFlashLight = false;
     FlashLight f = new FlashLight();
     Item[] playerItems = thePlayer.getItems();
@@ -180,9 +254,11 @@ public class AdventureGameModelFacade {
 
     }
 
-    // If the player does have a FlashLight, call checkRoom and return that list, if not then return an empty list
-    if(hasFlashLight){return f.checkRoom(thePlayer.getLoc());}
-
+    // If the player does have a FlashLight, call checkRoom and return that list
+    if(hasFlashLight){
+        return f.checkRoom(thePlayer.getLoc());
+    }
+    //if the player DOESN'T havea FlashLight, dont call checkRoom and return an empty list
     return new ArrayList<Integer>();
 
   }
