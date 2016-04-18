@@ -19,7 +19,7 @@ public class FlashLightTest {
 
         Door theDoor = new Door(loc,closed,new Key());
         loc.setSide(1,open);
-        loc.setSide(2, closed);
+        loc.setSide(2, theDoor);
 
         ArrayList<Inetger> sidesList = f.checkRoom(loc);
 
