@@ -99,9 +99,9 @@ How to use the flashlight:
 
 @Test Information:
 ------------------------------------------------
-- # of new tests written:
-- # of new defects found:
-- # of defects fixed:
-- Total # of tests run: 44
-- Total # tests passed: 44
+- # of new tests written: 4
+- # of new defects found: 0
+- # of defects fixed: 0
+- Total # of tests run: 48
+- Total # tests passed: 48
 
