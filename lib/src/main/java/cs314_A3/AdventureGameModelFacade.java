@@ -12,7 +12,6 @@ package cs314_A3;
  */
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 public class AdventureGameModelFacade {
     //private class variables
@@ -141,29 +140,7 @@ public class AdventureGameModelFacade {
 		  return "Your hands are full.";
 	  else {
 		 thePlayer.pickUp(item);
-         //update saveItemList
-         if(level == 0) {
-            switch (item.getItemId()){
-              case 0: saveItemList.set(0, -1); break;
-              case 1: saveItemList.set(1, -1); break;
-            }
-         }
-         else {
-           switch (item.getItemId()) {
-             case 0:
-               saveItemList.set(0, -1);
-               break;
-             case 1:
-               saveItemList.set(1, -1);
-               break;
-             case 2:
-               saveItemList.set(2, -1);
-               break;
-             case 3:
-               saveItemList.set(3, -1);
-               break;
-           }
-         }//END SAVEITEMLIST UPDATING
+          saveItemList.set(item.getItemId(), -1);
 		 (thePlayer.getLoc()).removeItem(item);
 		 return "Item picked up.";
 		}
@@ -178,28 +155,7 @@ public class AdventureGameModelFacade {
         //update saveItemList
         Item droppingItem = thePlayer.getItems()[itemToToss-1];
         int currRoom = thePlayer.getPlayerRoomNum();
-        if(level == 0) {
-            switch (droppingItem.getItemId()){
-              case 0: saveItemList.set(0, currRoom); break;
-              case 1: saveItemList.set(1, currRoom); break;
-            }
-        }
-        else {
-            switch (droppingItem.getItemId()) {
-                case 0:
-                  saveItemList.set(0, currRoom);
-                  break;
-                case 1:
-                  saveItemList.set(1, currRoom);
-                  break;
-                case 2:
-                  saveItemList.set(2, currRoom);
-                  break;
-                case 3:
-                  saveItemList.set(3, currRoom);
-                  break;
-            }
-        }//END SAVEITEMLIST UPDATING
+        saveItemList.set(droppingItem.getItemId(), currRoom);
           thePlayer.drop(itemToToss);
           return "Item dropped.";
     }
