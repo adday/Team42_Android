@@ -79,6 +79,17 @@ public class AdventureGameModelFacade {
     else return;
   }
 
+    //method that returns the locations of the items when
+    //the game is first LOADED FROM A SAVE. List will be used to save
+    //game, so must be updated when items move
+    private void initializeLoadItemList(ArrayList<Integer> loadList){
+        //initialize saveItemList
+        saveItemList = new ArrayList<Integer>();
+        //load data from saved game into list
+        for(int i = 2; i < loadList.size(); i++)
+            saveItemList.add(loadList.get(i));
+    }
+
     //method called from the constructor
     //calls the single level constructors depending on the
     //state of 'level' static variable
