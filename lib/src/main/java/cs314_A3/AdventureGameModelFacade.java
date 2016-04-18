@@ -71,7 +71,7 @@ public class AdventureGameModelFacade {
   private void initializeSaveItemList(int lvl){
       saveItemList = new ArrayList<Integer>();
       if(lvl == 1){
-      saveItemList.add(6);//add 'theKey' room#
+      saveItemList.add(5);//add 'theKey' room#
       saveItemList.add(3);//add 'wrongKey' room#
       saveItemList.add(7);//add 'flashlight' room#
       saveItemList.add(11);//add 'theTreasure' room#
