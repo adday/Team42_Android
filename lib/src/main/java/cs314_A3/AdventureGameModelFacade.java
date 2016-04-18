@@ -55,9 +55,12 @@ public class AdventureGameModelFacade {
      NOTE: THE ITEMS ARE ADDED TO THE PLAYERS ROOM IN THE LEVEL CONSTRUCTORS
    */
   private void playerPickUpInitialItems(ArrayList<Integer> savedGameState){
-      for(int i=2;i<savedGameState.size();i++){
-          if(savedGameState.get(i) == -1)
-              thePlayer.pickUp(getRoomContents()[0]);
+      for(int i=2;i<savedGameState.size();i++) {
+          for(int j = 0; j < getRoomContents().length;j++){
+              if(getRoomContents()[j].getItemId() == -1){
+                  thePlayer.pickUp(getRoomContents()[j]);
+              }
+          }
       }
   }
 
@@ -136,13 +139,7 @@ public class AdventureGameModelFacade {
 	  return thePlayer.go(3);
     }
 
-  public String getView(){ 
-     return thePlayer.look();
-     }
-
-  public String showItems(){
-     return thePlayer.showMyThings();
-     }
+  public String getView(){ return thePlayer.look();}
 
   //new grab method to also update itemlist used for saving
   //as well as grab item from room
