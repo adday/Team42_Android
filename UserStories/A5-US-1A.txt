@@ -25,10 +25,10 @@ Split story 1-A (5PTS): As a CS 314 student, I want to refactor the game to use 
     @Tasks who*(estimation/actual time):
         all*(1hr/1hr) Understanding Abstract Factory Design
         alex*(4hrs/3hrs) Implement Abstract Factory Design
-        all*(1.5hrs/hrs) Write tests for new abstract factory implementation
-        all*(1hr/hr) Fix bugs introduced by tests
+        alex*(1.5hrs/1hr) Write tests for new abstract factory implementation
+        alex*(1hr/.5hr) Fix bugs introduced by tests
         alex*(1hr/1hr) Add Abstract Factory description to overview.txt file
-        all*(1hr/.5hr) Ensure that DoD and rubric are both met
+        all*(1hr/1hr) Ensure that DoD and rubric are both met
 
 
 

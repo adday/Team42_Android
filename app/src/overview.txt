@@ -12,22 +12,25 @@
            -Designed level 1 cave layout
            -Produced documentation items that correlate with tasks completed
            -Added instructions page off of home page
+           -Wrote tests for Abstract Factory class
 
 -Ed Okvath: -Added FlashLight class with its functionality
             -Helped debug general problems
             -Wrote parts of the overview
+            -Wrote tests for flashlight class
 
 -Adrion Q Arkenberg: -Wrote code to save and load game, & added room tracking fxnality
                      -Documented code and added method comments
                      -Added user stories and overview.txt file in initial commit
                      -Helped design level loading system in Factory with Alex
+                     -Wrote tests for saving and loading feature
 
 
 @Time (hours) spent by each person on this assignment:
 -----------------------------------------------
-Alex Day: 12
-Ed Okvath: 12
-Adrion Q Arkenberg: 12
+Alex Day: 14
+Ed Okvath: 14
+Adrion Q Arkenberg: 14
 
 
 @CSU Honor Pledge:
@@ -37,7 +40,7 @@ I have not given, received, or used any unauthorized assistance.
 -Alex Day
 -Ed Okvath
 
-@Description of Difficulty Mechanism:
+@Description of Difficulty Mechanisms:
 ------------------------------------------------
 Added false keys and a flashlight in a new level(level 1). This can potentially trick
 the player as well as makes the skill of item management more important as the flashlight can
@@ -54,16 +57,17 @@ determined in the adventure game model facade.
 
 @Description of other Game Enhancements:
 ------------------------------------------------
-Added save and load functionality so users can continue their games without losing progress.
-Added a new item called a flashlight that makes navigating levels a lot easier by changing the UI
-to indicate what directions the user can go in.
+Added save and load functionality so users can continue their games without losing progress. Save
+feature auto-saves whenever the user exits the app or presses the 'back' button on the phone
+while in the app. Added a new item called a flashlight that makes navigating levels a lot easier by
+changing the UI to indicate what directions the user can go in.
 
 @User Needs to Know:
 ------------------------------------------------
-1. The game auto-saves on exit
+1. The game auto-saves on exit or when 'back' button on phone pressed
 2. Load game defaults to the beginning of level zero if nothing has been saved
 3. Each level is won by bringing the treasure outside
-4. Gameplay instructions are available in the start-up screen
+4. Additional gameplay instructions are available in the start-up screen
 
 @Special Instructions:
 ------------------------------------------------
@@ -96,6 +100,11 @@ How to use the flashlight:
 
     WHERE ALL '#' ARE THE ROOM NUMBERS WHERE THOSE ITEMS ARE LOCATED
     (VALUE OF '-1' IS THE PLAYER)
+
+NOTE: in order to take care of this feature, we had to assign each item an id, which was also
+    its corresponding index in the item array that was used to save the state of the items.
+    Additionally, we added 'current room numbers' to the Item, Room, and Player classes to be
+    used when we were saving.
 
 @Test Information:
 ------------------------------------------------
