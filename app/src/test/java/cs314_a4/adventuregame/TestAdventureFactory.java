@@ -14,6 +14,10 @@ import static org.junit.Assert.*;
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 public class TestAdventureFactory {
+
+    //test to make sure that factory creation is working
+    // for level 0. checks that player is placed in correct room,
+    // and winning item is correct room
     @Test
     public void TestLevelZeroAdventureFactory() throws Exception {
         AdventureFactory advLvl0 = new LevelZeroAdventureFactory();
@@ -23,6 +27,9 @@ public class TestAdventureFactory {
 
     }
 
+    //test to make sure that factory creation is working
+    // for level 1. checks that player is placed in correct room,
+    // and winning item is correct room
     @Test
     public void TestLevelOneAdventureFactory() throws Exception {
         AdventureFactory advLvl1 = new LevelOneAdventureFactory();

@@ -14,6 +14,8 @@ import static org.junit.Assert.*;
  */
 public class saveLoadTest {
 
+    //test to make sure that default item list for lvl 0
+    // used to save game is being created correctly
     @Test
     public void initializeSaveItemListTest0() throws Exception {
         AdventureGameModelFacade model = new cs314_A3.AdventureGameModelFacade(0);
@@ -22,6 +24,8 @@ public class saveLoadTest {
         assertEquals(a.get(1), 6);
     }
 
+    //test to make sure that default loaded item list for lvl 1
+    // used to save game is being loaded correctly
     @Test
     public void initializeSaveItemListTest1() throws Exception {
         AdventureGameModelFacade model = new cs314_A3.AdventureGameModelFacade(1);

@@ -12,6 +12,10 @@ import static org.junit.Assert.*;
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 public class UseFlashLightTest {
+
+    //test to ensure that flashlight is in correct room and that its
+    // 'useFlashlight' method is working as it should by checking it in its
+    // default room.
     @Test
     public void useFlashLight_isCorrect() throws Exception {
         AdventureGameModelFacade AGMF = new AdventureGameModelFacade(1);

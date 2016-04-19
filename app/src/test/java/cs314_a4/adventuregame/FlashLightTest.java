@@ -10,6 +10,9 @@ import static org.junit.Assert.*;
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 public class FlashLightTest {
+
+    //test to make sure that sides of room returned by flashlight
+    //method is correct
     @Test
     public void FlashLight_isCorrect() throws Exception {
         FlashLight f = new FlashLight();
