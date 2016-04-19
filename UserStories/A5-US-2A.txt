@@ -24,9 +24,9 @@ Split story 2-A (5PTS): As a CS 314 student, I want to add save and restore game
         adrion*(1hr/2hr) Decide how best to save, and what is needed
         adrion*(3hrs/3hrs) Implement saving and restoring methods
         adrion*(2hrs/1.5hrs) Added save/load features to GUI and connect to underlying methods
-        all*(1.5hrs/hrs) Write tests for new level implementation
-        all*(1hr/hr) Fix bugs introduced by tests
-        adrion*(1hr/hr) Add description of save/load mechanism to overview.txt file
+        adrion*(1.5hrs/1hr) Write tests for save/load implementation
+        adrion*(1hr/.5hr) Fix bugs introduced by tests
+        adrion*(1hr/1hr) Add description of save/load mechanism to overview.txt file
         all*(1hr/1hr) Ensure that DoD and rubric are both met
 
 
