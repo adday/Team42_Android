@@ -7,6 +7,14 @@ import java.lang.Integer;
 import static org.junit.Assert.*;
 
 /**
+ Adventure Game  Program Code
+ filename: FlashlightTest.java
+ purpose: tests flashlight checkroom method
+ Authors:
+    Ed Okvath
+ **/
+
+/**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 public class FlashLightTest {

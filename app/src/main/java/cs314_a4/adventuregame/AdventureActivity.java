@@ -14,7 +14,16 @@ import java.util.ArrayList;
 import cs314_A3.AdventureGameModelFacade;
 import cs314_A3.Item;
 
-
+/**
+ Adventure Game  Program Code
+ filename: AdventureActivity.java
+ purpose: contains android GUI code that connects to the
+    Adventure game model facade
+ Authors:
+     Adrion Q Arkenberg
+     Alex Day
+     Ed Okvath
+ **/
 
 public class AdventureActivity extends Activity {
 

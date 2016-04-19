@@ -11,6 +11,14 @@ import cs314_A3.LevelZeroAdventureFactory;
 import static org.junit.Assert.*;
 
 /**
+ Adventure Game  Program Code
+ filename: TestAdventureFactory.java
+ purpose: tests the code involved in lvl creation that uses the adventureFactory
+ Authors:
+    Alex Day
+ **/
+
+/**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 public class TestAdventureFactory {

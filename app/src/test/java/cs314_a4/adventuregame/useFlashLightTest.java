@@ -9,6 +9,14 @@ import cs314_A3.AdventureGameModelFacade;
 import static org.junit.Assert.*;
 
 /**
+ Adventure Game  Program Code
+ filename: useFlashlightTest.java
+ purpose: tests flashlight useFlashlight method
+ Authors:
+    Ed Okvath
+ **/
+
+/**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 public class UseFlashLightTest {

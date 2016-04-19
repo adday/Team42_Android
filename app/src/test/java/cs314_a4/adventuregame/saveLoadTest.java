@@ -10,6 +10,15 @@ import cs314_A3.AdventureGameModelFacade;
 import static org.junit.Assert.*;
 
 /**
+ Adventure Game  Program Code
+ filename: saveLoadTest.java
+ purpose: tests saving and loading fxnality of Adventure Game
+ Authors:
+    Adrion Q Arkenberg
+
+ **/
+
+/**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 public class saveLoadTest {
