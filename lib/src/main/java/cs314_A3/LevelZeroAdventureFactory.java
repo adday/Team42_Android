@@ -13,7 +13,7 @@ import java.util.ArrayList;
          Ed Okvath
  **/
 public class LevelZeroAdventureFactory implements AdventureFactory {
-    Item winningItem;
+    private Item winningItem;
 
     @Override
     public Room createAdventure() {
