@@ -9,9 +9,21 @@ import cs314_A3.AdventureGameModelFacade;
 import static org.junit.Assert.*;
 
 /**
+ Adventure Game  Program Code
+ filename: useFlashlightTest.java
+ purpose: tests flashlight useFlashlight method
+ Authors:
+    Ed Okvath
+ **/
+
+/**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 public class UseFlashLightTest {
+
+    //test to ensure that flashlight is in correct room and that its
+    // 'useFlashlight' method is working as it should by checking it in its
+    // default room.
     @Test
     public void useFlashLight_isCorrect() throws Exception {
         AdventureGameModelFacade AGMF = new AdventureGameModelFacade(1);
