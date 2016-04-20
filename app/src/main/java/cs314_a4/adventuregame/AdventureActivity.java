@@ -69,18 +69,15 @@ public class AdventureActivity extends Activity {
         switch (view.getId()) {
             case R.id.Lvl0Adventure:
                 //initialize connection to model and set inital view
-                model = new AdventureGameModelFacade(0);
-                setGameView();
+                startAdventure(0);
                 break;
             case R.id.Lvl1Adventure:
                 //initialize connection to model and set inital view
-                model = new AdventureGameModelFacade(1);
-                setGameView();
+                startAdventure(1);
                 break;
             case R.id.savedAdventure:
                 //initialize connection to model and set inital view
-                model = new AdventureGameModelFacade(loadGame());
-                setGameView();
+                startAdventure(-1); // -1 for saved game
                 break;
             case R.id.goUp:
                 actionResult = model.goUp();
@@ -114,17 +111,43 @@ public class AdventureActivity extends Activity {
 
     // fxn that sets the initial text of the game,
     // and switches the view to the main game view
-    private void setGameView(){
+    private void startAdventure(int level){
         setContentView(R.layout.main);
+        if(level == -1) { //saved game loaded first to allow level to
+            model = new AdventureGameModelFacade(loadGame());
+            setHeaderColor();
+        }
+        if(level == 0) {
+            model = new AdventureGameModelFacade(0);
+            setHeaderColor();
+        }
+        if(level == 1){
+            model = new AdventureGameModelFacade(1);
+            setHeaderColor();
+        }
         TextView myView = (TextView) findViewById(R.id.roomView);
         myView.setText("\n" + "Explore the cave system and see what you can find.\nDon't get lost! \n\n"
                 + model.getView());
+    }
+
+
+    // sets the header in the game play view depending on the level
+    // colors set in colors.xml
+    public void setHeaderColor(){
+        TextView myView = (TextView) findViewById(R.id.heading);
+        switch(model.getLevel()){
+            case 0: myView.setBackgroundColor(getResources().getColor(R.color.level1color));
+                    break;
+            case 1: myView.setBackgroundColor(getResources().getColor(R.color.level2color));
+                    break;
+        }
     }
 
     // check if level is complete to reset GUI connection appropriately
     private String updateLevel(){
         if(model.levelComplete()){
             model = new AdventureGameModelFacade(model.getLevel());
+            setHeaderColor();
             return "Level complete, onto a new adventure!\n\n";}
         else
             return "";
@@ -299,39 +322,41 @@ public class AdventureActivity extends Activity {
         1: key, wrongKey, flashlight, treasure
      */
     public void saveGame(){
-        //get data to save
-        int gameLvl = model.getLevel();
-        int playerRoom = model.getPlayerRoomNum();
-        //open sharedPref
-        SharedPreferences saveFile = this.getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = saveFile.edit(); //create preferences editor
-        //store level
-        editor.putInt(getString(R.string.lvl), gameLvl);
-        //store player room
-        editor.putInt(getString(R.string.player), playerRoom);
+        if(model != null) { // null model condition occurs if first page visited is the instruction page
+            //get data to save
+            int gameLvl = model.getLevel();
+            int playerRoom = model.getPlayerRoomNum();
+            //open sharedPref
+            SharedPreferences saveFile = this.getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = saveFile.edit(); //create preferences editor
+            //store level
+            editor.putInt(getString(R.string.lvl), gameLvl);
+            //store player room
+            editor.putInt(getString(R.string.player), playerRoom);
 
-        //get lvl so itemList contents are known
-        //get saveItemList
-        ArrayList<Integer> items = model.getSaveItemList();
+            //get lvl so itemList contents are known
+            //get saveItemList
+            ArrayList<Integer> items = model.getSaveItemList();
 
-        if(gameLvl == 0){
-            //add treasure
-            editor.putInt(getString(R.string.treasure), items.get(0));
-            //add key
-            editor.putInt(getString(R.string.key), items.get(1));
-        }else{
-            //add key
-            editor.putInt(getString(R.string.key), items.get(0));
-            //add key
-            editor.putInt(getString(R.string.wrongKey), items.get(1));
-            //add treasure
-            editor.putInt(getString(R.string.flash), items.get(2));
-            //add treasure
-            editor.putInt(getString(R.string.treasure), items.get(3));
+            if (gameLvl == 0) {
+                //add treasure
+                editor.putInt(getString(R.string.treasure), items.get(0));
+                //add key
+                editor.putInt(getString(R.string.key), items.get(1));
+            } else {
+                //add key
+                editor.putInt(getString(R.string.key), items.get(0));
+                //add key
+                editor.putInt(getString(R.string.wrongKey), items.get(1));
+                //add treasure
+                editor.putInt(getString(R.string.flash), items.get(2));
+                //add treasure
+                editor.putInt(getString(R.string.treasure), items.get(3));
+            }
+
+            //commit save
+            editor.commit();
         }
-
-        //commit save
-        editor.commit();
     }
 
     //fxn called when the game reloads.
