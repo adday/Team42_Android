@@ -16,7 +16,9 @@
         android:layout_marginTop="22dp"
         android:textColor="#9f5622"
         android:textSize="@dimen/abc_dialog_padding_top_material"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:autoText="false"
+        android:padding="@dimen/abc_action_bar_content_inset_material" />
 
     <TextView
         android:layout_width="wrap_content"

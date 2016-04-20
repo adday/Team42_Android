@@ -106,9 +106,10 @@ public class AdventureGameModelFacade {
 
     //method to check whether the player has brought
     //the winning item outside
-    //if so: increments level and returns true
+    //if so: increments level with wraparound and returns true
     //else returns false
   public boolean levelComplete(){
+      //check if roomNum is 0 as this is the outside room number always
     if(thePlayer.haveItem(adventureFactory.getWinningItem()) && thePlayer.getLoc().getRoomNum() == 0){
       level = (level+1) % 2;
       return true;}
