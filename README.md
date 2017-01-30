@@ -1,4 +1,4 @@
 
 ## Adventure Game App for Android
 
-### CS314 Spring 2016
+### Created SP 2016 by Alexander Day, Adrian Arkenberg, and Ed Okvath
